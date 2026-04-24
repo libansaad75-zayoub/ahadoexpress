@@ -1056,6 +1056,7 @@ const catNamesAr = {
   "Spaghetti": "معكرونة",
   "Lait Poudre": "حليب مجفف",
   "Lait Infantile": "حليب أطفال",
+  "Huiles": "زيوت",
   "Épices": "توابل",
   "Nettoyage": "منتجات تنظيف",
   "Autres": "أخرى",
@@ -1066,6 +1067,7 @@ const catNamesEn = {
   "Spaghetti": "Pasta",
   "Lait Poudre": "Powdered Milk",
   "Lait Infantile": "Baby Milk",
+  "Huiles": "Oils",
   "Épices": "Spices",
   "Nettoyage": "Cleaning",
   "Autres": "Others",
@@ -1128,7 +1130,10 @@ const productImages = {
   // Riz
   "Assad": "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=400&q=80",
   "Assad Premium": "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=400&q=80",
-  "Assad Gold": "assad_gold.jpeg",
+  "Assad Gold": "images/asad-gold.jpg",
+  "Assad Premium": "images/asad-gold.jpg",
+  "Falak Extreme": "images/falak-extreme.jpg",
+  "Falak Premium": "images/falak-extreme.jpg",
   "JB Basmati": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&q=80",
   "JB Bazar": "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=400&q=80",
   "Faiza": "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=400&q=80",
@@ -1240,8 +1245,101 @@ const productImages = {
   "Huile Bertini": "img_shelf1.jpeg",
   "Largo": "img_shelf2.jpeg",
   "Franc Eau de Cologne": "img_shelf2.jpeg",
-  "Cnice Shampoo": "img_shelf2.jpeg",
+  "Cnice Shampoo": "images/cnice-shampoo.jpg",
   "Fema Poudre": "img_fema.jpeg",
+  // Nouvelles images produits (v11)
+  "Bledilait Junior": "images/bledilait-croissance.jpg",
+  "Saoudia petit": "images/saudia-lait-poudre.jpg",
+  "Nura grand": "images/nura-lait-poudre.jpg",
+  "Nura petit": "images/nura-lait-poudre.jpg",
+  "Brix Grand": "images/brix-nettoyant-wc.jpg",
+  "Flash": "images/flash-nettoyant-wc.jpg",
+  // Nouvelles images v12 (batch 2)
+  "TwinCows grand": "images/cows-lait-poudre.jpg",
+  "Anchor grand": "images/anchor-grand.jpg",
+  "Anchor petit": "images/anchor-grand.jpg",
+  "Nursi 1": "images/nursie-1.jpg",
+  "Nursi 2": "images/nursie-2.jpg",
+  "Nursi 3": "images/nursie-2.jpg",
+  "Hanny": "images/hanny-lait-poudre.jpg",
+  "Bledilait 2": "images/bledilait-2.jpg",
+  "Bledilait 3": "images/bledilait-3.jpg",
+  "Bledilait 1": "images/bledilait-2.jpg",
+  "Mazola Ghee": "images/mazola-ghee.jpg",
+  "Nido +1 petit format": "images/nido-forti-croissance.jpg",
+  "Nido +3 grand format": "images/nido-forti-croissance.jpg",
+  // Nouveaux produits
+  "Bertini Huile d'Olive": "images/bertini-huile-olive.jpg",
+  "Huile Bertini": "images/bertini-huile-olive.jpg",
+  "Virginia Garden Huile d'Olive": "images/virginia-garden-huile-olive.jpg",
+  "Consul Huile d'Olive": "images/consul-huile-olive.jpg",
+  "Huile Consul": "images/consul-huile-olive.jpg",
+  "Omaar Huile Tournesol": "images/omaar-huile-tournesol.jpg",
+  "SilkGarden Liquide Vaisselle": "images/silkgarden-liquide-vaisselle.jpg",
+  "Achar Pickles": "images/achar-pickles.jpg",
+  "Pranutti Pâte à Tartiner": "images/pranutti-pate-tartiner.jpg",
+  "Flora Custard": "images/flora-custard.jpg",
+  "Luna Baked Beans": "images/luna-baked-beans.jpg",
+  "Can Fleurs Macédoine": "images/canfleurs-macedoine.jpg",
+  "Almomtaz Miel Pot": "images/almomtaz-miel-pot.jpg",
+  "Almomtaz Miel Flacon": "images/almomtaz-miel-flacon.jpg",
+  "Mayor Mayonnaise": "images/mayor-mayonnaise.jpg",
+  "Mayonnaise petit": "images/mayor-mayonnaise.jpg",
+  "Mayonnaise grand": "images/mayor-mayonnaise.jpg",
+  // Nouveaux produits v12
+  "NAN Optipro 2": "images/nan-optipro-2.jpg",
+  "Foster Clarks Mandarine": "images/foster-clarks-mandarine.jpg",
+  "Brover Olives Noires": "images/brover-olives-noires.jpg",
+  "Festiva Sirop": "images/festiva-sirop.jpg",
+  "Rodha White Oats": "images/rodha-white-oats.jpg",
+  "Colombo Grenadine": "images/colombo-grenadine.jpg",
+  "Sunquick Mandarine": "images/sunquick-mandarine.jpg",
+  // Nouvelles images v13 (batch 3)
+  "Curcuma": "images/pran-curcuma.jpg",
+  "Moutarde petit": "images/alwalid-moutarde.jpg",
+  "Moutarde grand": "images/alwalid-moutarde.jpg",
+  // Nouveaux produits v13
+  "Nescafé Classic": "images/nescafe-classic.jpg",
+  "Eau Minérale": "images/eau-minerale.jpg",
+  "Alwalid Sel": "images/alwalid-sel.jpg",
+  "Lejador Ananas": "images/lejador-ananas.jpg",
+  "Luna Green Peas": "images/luna-green-peas.jpg",
+  "Mila Pêches": "images/mila-peches.jpg",
+  "Alhamra Purée Tomates": "images/alhamra-puree-tomates.jpg",
+  "Luna Haricots Blancs": "images/luna-haricots-blancs.jpg",
+  "Luna Foul Medames": "images/luna-foul-medames.jpg",
+  "Florida Confiture": "images/florida-confiture.jpg",
+  // Images v14 (batch 4) - liées aux existants
+  "Nesquick Poudre": "images/nesquick-poudre.jpg",
+  // Nouveaux produits v14
+  "Oxi Gel Black": "images/oxi-gel-black.jpg",
+  "Eazy Liquid Detergent 1L": "images/eazy-detergent-1L.jpg",
+  "Eazy Liquid Detergent 2L": "images/eazy-detergent-2L.jpg",
+  "Hayaat Honey Shampoo": "images/hayaat-shampoo.jpg",
+  "Brix Lavande 5L": "images/brix-lavande-5L.jpg",
+  "Beauty Clinic All Purpose 5L": "images/beauty-clinic-5L.jpg",
+  "Jumbo Bouillon Poulet": "images/jumbo-bouillon.jpg",
+  "Dania Épices Zurbian": "images/dania-zurbian.jpg",
+  "Nile Curry Powder": "images/nile-curry.jpg",
+  "Emballage Épices": "images/jaihind-emballage.jpg",
+  "Colorant Alimentaire": "images/colorant-alimentaire.jpg",
+  "Filtres à Café N°4": "images/filtres-cafe.jpg",
+  "Alamir Charbon": "images/alamir-charbon.jpg",
+  "Couscous Moyen": "images/couscous-moyen.jpg",
+  "Foster Clark's Baking Powder": "images/foster-clarks-baking.jpg",
+  "Dyna Antibacterial Hand Wash": "images/dyna-handwash.jpg",
+  // Images v15 (batch 5) - liées à existants
+  "Javel": "images/power-javel.jpg",
+  "Fasclean petit": "images/fasclean-1L.jpg",
+  "Fasclean moyen": "images/fasclean-1L.jpg",
+  "Fasclean 5L": "images/fasclean-1L.jpg",
+  "Largo": "images/largo-bidon.jpg",
+  // Nouveaux produits v15
+  "Dettol Antiseptic": "images/dettol-antiseptic.jpg",
+  "Elegant Furniture Polish": "images/elegant-furniture.jpg",
+  "Gaari Shampoo": "images/gaari-shampoo.jpg",
+  "Garnier Ultra Doux": "images/garnier-ultra-doux.jpg",
+  "Crème à Récurer": "images/creme-recurer.jpg",
 };
 
 // Category fallback images
@@ -1252,6 +1350,7 @@ const catImages = {
   "Lait Infantile": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=400&q=80",
   "Épices": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&q=80",
   "Nettoyage": "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&q=80",
+  "Huiles": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&q=80",
   "Autres": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&q=80",
 };
 
@@ -1264,6 +1363,7 @@ const catIcons = {
   "Lait Infantile": "👶",
   "Épices": "🌶️",
   "Nettoyage": "🧴",
+  "Huiles": "🫒",
   "Autres": "📦"
 };
 
@@ -1377,7 +1477,62 @@ const SHEET_PRODUCTS = [
   {cat:"Nettoyage",name:"Largo",icon:"🧴",prices:[{label:"Bidon 2L",qty:1,price:800}, {label:"Pack (×3)",qty:1,price:2300}, {label:"Pack (×6)",qty:1,price:4500}]},
   {cat:"Nettoyage",name:"Franc Eau de Cologne",icon:"🧴",prices:[{label:"Bouteille 1L",qty:1,price:500}, {label:"Pack (×3)",qty:1,price:1400}, {label:"Pack (×6)",qty:1,price:2800}]},
   {cat:"Nettoyage",name:"Cnice Shampoo",icon:"🧴",prices:[{label:"Flacon",qty:1,price:700}, {label:"Pack (×3)",qty:1,price:2000}, {label:"Pack (×6)",qty:1,price:3900}]},
-  {cat:"Nettoyage",name:"Fema Poudre",popular:true,icon:"🧴",prices:[{label:"Boîte 1Kg",qty:1,price:600}, {label:"Pack (×3)",qty:1,price:1700}, {label:"Pack (×6)",qty:1,price:3300}]}
+  {cat:"Nettoyage",name:"Fema Poudre",popular:true,icon:"🧴",prices:[{label:"Boîte 1Kg",qty:1,price:600}, {label:"Pack (×3)",qty:1,price:1700}, {label:"Pack (×6)",qty:1,price:3300}]},
+  // Nouveaux produits v11 - prix à confirmer
+  {cat:"Huiles",name:"Bertini Huile d'Olive",icon:"🫒",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Huiles",name:"Virginia Garden Huile d'Olive",icon:"🫒",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Huiles",name:"Consul Huile d'Olive",icon:"🫒",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Huiles",name:"Omaar Huile Tournesol",icon:"🌻",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Nettoyage",name:"SilkGarden Liquide Vaisselle",icon:"🧴",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Achar Pickles",icon:"🥒",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Pranutti Pâte à Tartiner",icon:"🍫",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Flora Custard",icon:"🍮",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Luna Baked Beans",icon:"🫘",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Can Fleurs Macédoine",icon:"🥗",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Almomtaz Miel Pot",icon:"🍯",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Almomtaz Miel Flacon",icon:"🍯",prices:[{label:"Sur demande",qty:1,price:0}]},
+  // Nouveaux produits v12
+  {cat:"Lait Infantile",name:"NAN Optipro 2",icon:"👶",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Foster Clarks Mandarine",icon:"🥤",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Brover Olives Noires",icon:"🫒",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Festiva Sirop",icon:"🥤",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Rodha White Oats",icon:"🌾",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Colombo Grenadine",icon:"🥤",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Sunquick Mandarine",icon:"🥤",prices:[{label:"Sur demande",qty:1,price:0}]},
+  // Nouveaux produits v13 (batch 3)
+  {cat:"Autres",name:"Nescafé Classic",icon:"☕",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Eau Minérale",icon:"💧",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Épices",name:"Alwalid Sel",icon:"🧂",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Lejador Ananas",icon:"🍍",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Luna Green Peas",icon:"🫛",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Mila Pêches",icon:"🍑",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Alhamra Purée Tomates",icon:"🍅",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Luna Haricots Blancs",icon:"🫘",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Luna Foul Medames",icon:"🫘",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Florida Confiture",icon:"🍓",prices:[{label:"Sur demande",qty:1,price:0}]},
+  // Nouveaux produits v14 (batch 4)
+  {cat:"Nettoyage",name:"Oxi Gel Black",icon:"🧴",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Nettoyage",name:"Eazy Liquid Detergent 1L",icon:"🧴",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Nettoyage",name:"Eazy Liquid Detergent 2L",icon:"🧴",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Nettoyage",name:"Hayaat Honey Shampoo",icon:"🧴",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Nettoyage",name:"Brix Lavande 5L",icon:"🧴",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Nettoyage",name:"Beauty Clinic All Purpose 5L",icon:"🧴",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Nettoyage",name:"Dyna Antibacterial Hand Wash",icon:"🧼",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Épices",name:"Jumbo Bouillon Poulet",icon:"🍲",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Épices",name:"Dania Épices Zurbian",icon:"🌿",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Épices",name:"Nile Curry Powder",icon:"🌿",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Épices",name:"Emballage Épices",icon:"📦",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Épices",name:"Colorant Alimentaire",icon:"🎨",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Filtres à Café N°4",icon:"☕",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Alamir Charbon",icon:"🔥",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Couscous Moyen",icon:"🌾",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Autres",name:"Foster Clark's Baking Powder",icon:"🧁",prices:[{label:"Sur demande",qty:1,price:0}]},
+  // Nouveaux produits v15 (batch 5)
+  {cat:"Nettoyage",name:"Dettol Antiseptic",icon:"🧴",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Nettoyage",name:"Elegant Furniture Polish",icon:"✨",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Nettoyage",name:"Gaari Shampoo",icon:"🧴",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Nettoyage",name:"Garnier Ultra Doux",icon:"🧴",prices:[{label:"Sur demande",qty:1,price:0}]},
+  {cat:"Nettoyage",name:"Crème à Récurer",icon:"🧴",prices:[{label:"Sur demande",qty:1,price:0}]}
 ];
 
 /* ============================================================
@@ -1551,8 +1706,8 @@ function buildGrid(){
     const idx=products.indexOf(product);
     const card=document.createElement("div");
     card.className="card";
-    const priceRows=product.prices.map(p=>`<tr><td><span class="lbl-badge">${p.label}</span></td><td>${p.price.toLocaleString("fr-FR")} FDJ</td></tr>`).join("");
-    const opts=product.prices.map((p,pi)=>`<option value="${pi}">${p.label} — ${p.price.toLocaleString("fr-FR")} FDJ</option>`).join("");
+    const priceRows=product.prices.map(p=>`<tr><td><span class="lbl-badge">${p.label}</span></td><td>${p.price===0?'<em style="color:#888">Sur demande</em>':p.price.toLocaleString("fr-FR")+' FDJ'}</td></tr>`).join("");
+    const opts=product.prices.map((p,pi)=>`<option value="${pi}">${p.label}${p.price===0?'':' — '+p.price.toLocaleString("fr-FR")+' FDJ'}</option>`).join("");
     const imgSrc = product.imgUrl || productImages[product.name] || catImages[product.cat] || '';
     const badgeHtml = product.popular ? `<div class="card-badge">⭐ ${t('badge-popular')}</div>` : '';
     const imgHtml = imgSrc 
