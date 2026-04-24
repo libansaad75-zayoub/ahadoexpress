@@ -1,0 +1,47 @@
+# ═══════════════════════════════════════════════════
+# Configuration Netlify — AHADO EXPRESS
+# ═══════════════════════════════════════════════════
+
+[build]
+  publish = "."
+
+# Force index.html comme page par défaut
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+# Headers de sécurité et cache
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Cache long pour les fichiers de vérification
+[[headers]]
+  for = "/google*.html"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+# Cache sitemap et robots
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+# Pas de cache agressif sur le HTML principal (pour que les MAJ se voient vite)
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"

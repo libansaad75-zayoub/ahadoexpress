@@ -1,0 +1,3 @@
+# Redirections Netlify — AHADO EXPRESS
+# Force index.html comme page principale
+/       /index.html       200

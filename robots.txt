@@ -1,0 +1,27 @@
+# robots.txt — AHADO EXPRESS
+# https://ahadoexpress.net
+
+User-agent: *
+Allow: /
+
+# Crawlers spécifiques explicitement autorisés
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: FacebookExternalHit
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Sitemap
+Sitemap: https://ahadoexpress.net/sitemap.xml
