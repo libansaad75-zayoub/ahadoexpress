@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Sécurité : Content Security Policy -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://docs.google.com https://plausible.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>AHADO EXPRESS — Épicerie en ligne à Djibouti | Livraison rapide</title>
 <meta name="description" content="Commandez vos produits d'épicerie en ligne à Djibouti. Livraison rapide à Djibouti-Ville. Riz, pâtes, lait, épices, produits d'entretien. Paiement Waafi, CAC Pay, D-Money, Saba Pay ou cash.">
 <meta name="keywords" content="épicerie Djibouti, livraison Djibouti, riz Djibouti, courses en ligne Djibouti, ahado express, épicerie Djibouti-Ville, waafi, cac pay">
@@ -41,7 +45,7 @@
 <meta name="theme-color" content="#1c4a2a">
 
 <!-- Analytics Plausible (RGPD-friendly, aucun cookie) -->
-<script defer data-domain="ahadoexpress.net" src="https://plausible.io/js/script.tagged-events.js"></script>
+<script defer data-domain="ahadoexpress.net" src="https://plausible.io/js/script.tagged-events.js" crossorigin="anonymous"></script>
 <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -247,11 +251,6 @@ nav{display:flex;align-items:center;gap:8px;}
 .card-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--forest);line-height:1.2;}
 .card-icon{position:absolute;right:16px;top:14px;font-size:1.5rem;opacity:0.35;line-height:1;}
 .card-body{padding:18px 22px 22px;flex:1;display:flex;flex-direction:column;}
-.price-table{width:100%;border-collapse:collapse;font-size:0.82rem;margin-bottom:16px;}
-.price-table th{text-align:left;color:var(--muted);font-weight:500;font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;padding:0 0 9px;border-bottom:1px solid var(--border);}
-.price-table td{padding:7px 0;border-bottom:1px solid rgba(28,74,42,0.05);vertical-align:middle;}
-.price-table td:last-child{text-align:right;font-weight:700;color:var(--forest);font-size:0.88rem;}
-.lbl-badge{display:inline-block;background:var(--sage);color:var(--forest);border-radius:6px;padding:2px 9px;font-size:0.72rem;font-weight:600;}
 .card-order{margin-top:auto;display:flex;flex-direction:column;gap:8px;}
 .card-order-row{display:flex;gap:8px;}
 .qty-input{width:62px;border:1.5px solid var(--border);border-radius:var(--r);padding:10px 6px;font-size:0.95rem;font-family:'Outfit',sans-serif;text-align:center;outline:none;color:var(--ink);transition:border .2s;}
@@ -372,7 +371,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
       <button class="lang-btn" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('ar')">AR</button>
     </div>
-    <a href="https://wa.me/25377788302" target="_blank" class="btn-wa-hdr">
+    <a href="https://wa.me/25377788302" target="_blank" rel="noopener noreferrer" class="btn-wa-hdr">
       <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       <span data-i18n="btn-order-wa">Commander sur WhatsApp</span>
     </a>
@@ -386,7 +385,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
     <p class="hero-desc" data-i18n="hero-desc">Riz, pâtes, lait en poudre, épices et produits d'entretien — commandez en ligne et recevez vos produits sous 24h.</p>
     <div class="hero-actions">
       <a href="#catalogue" class="btn-primary" data-i18n="hero-cta">🛒 Voir le catalogue</a>
-      <a href="https://wa.me/25377788302" target="_blank" class="btn-ghost">
+      <a href="https://wa.me/25377788302" target="_blank" rel="noopener noreferrer" class="btn-ghost">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span data-i18n="hero-wa-direct">WhatsApp direct</span>
       </a>
@@ -517,7 +516,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
 
       <div class="form-group">
         <label class="form-label" data-i18n="form-phone">Téléphone WhatsApp <span class="required">*</span></label>
-        <input type="tel" class="form-input" id="formPhone" required data-i18n-placeholder="form-phone-ph" placeholder="77 00 00 00">
+        <input type="tel" class="form-input" id="formPhone" required maxlength="20" autocomplete="tel" data-i18n-placeholder="form-phone-ph" placeholder="77 00 00 00">
         <div class="form-hint" data-i18n="form-phone-hint">Pour confirmer la commande et la livraison</div>
         <div class="form-error" data-i18n="form-required">Ce champ est requis</div>
       </div>
@@ -668,7 +667,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
     <div class="footer-brand">
       <div class="logo" style="color:white">AHADO<em> EXPRESS</em></div>
       <p data-i18n="footer-desc">Votre épicerie en ligne à Djibouti. Commandez facilement via WhatsApp et recevez vos produits chez vous sous 24h.</p>
-      <a href="https://wa.me/25377788302" target="_blank" class="btn-wa-hdr" style="display:inline-flex">
+      <a href="https://wa.me/25377788302" target="_blank" rel="noopener noreferrer" class="btn-wa-hdr" style="display:inline-flex">
         <svg viewBox="0 0 24 24" fill="white" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         +253 77 78 83 02
       </a>
@@ -685,7 +684,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
     <div class="footer-col">
       <h4 data-i18n="footer-contact">Contact</h4>
       <ul>
-        <li><a href="https://wa.me/25377788302" target="_blank">WhatsApp</a></li>
+        <li><a href="https://wa.me/25377788302" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
         <li><a href="#">Djibouti-Ville</a></li>
       </ul>
       <h4 style="margin-top:22px" data-i18n="footer-payment">Paiement accepté</h4>
@@ -710,6 +709,21 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
 
 <script>
 const WHATSAPP_NUMBER = "25377788302";
+
+/* ============================================================
+   SÉCURITÉ — Échappement HTML pour prévenir XSS
+   Toutes les données externes (Google Sheet, formulaires) doivent
+   passer par escapeHtml() avant insertion via innerHTML.
+   ============================================================ */
+function escapeHtml(str) {
+  if (str == null) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 /* ============================================================
    TRANSLATIONS
@@ -756,8 +770,6 @@ const translations = {
     "cat-sub": "Sélectionnez vos articles et commandez directement sur WhatsApp",
     "search-placeholder": "Rechercher un produit...",
     "filter-all": "Tous",
-    "table-format": "Format",
-    "table-price": "Prix",
     "btn-add": "+ Ajouter",
     "btn-added": "✓ Ajouté",
     "cart-title": "Mon Panier",
@@ -867,8 +879,6 @@ const translations = {
     "cat-sub": "Select items and order directly on WhatsApp",
     "search-placeholder": "Search a product...",
     "filter-all": "All",
-    "table-format": "Format",
-    "table-price": "Price",
     "btn-add": "+ Add",
     "btn-added": "✓ Added",
     "cart-title": "My Cart",
@@ -978,8 +988,6 @@ const translations = {
     "cat-sub": "اختر منتجاتك واطلب مباشرة عبر واتساب",
     "search-placeholder": "ابحث عن منتج...",
     "filter-all": "الكل",
-    "table-format": "الحجم",
-    "table-price": "السعر",
     "btn-add": "+ إضافة",
     "btn-added": "✓ تمت الإضافة",
     "cart-title": "سلتي",
@@ -1124,7 +1132,7 @@ function setLang(lang) {
 }
 
 /* ============================================================
-   PRODUCT IMAGE — using Unsplash for generic food images
+   PRODUCT IMAGES — Photos locales (dossier /images/)
    ============================================================ */
 const productImages = {
   // Riz
@@ -1132,25 +1140,20 @@ const productImages = {
   "Assad Gold": "images/asad-gold.jpg",
   "Falak Extreme": "images/falak-extreme.jpg",
   "Falak Premium": "images/falak-extreme.jpg",
-  // Spaghetti / Pâtes
-  // Lait Poudre
-  // Lait Infantile
-  // Épices
-  // Nettoyage
-  // Autres
+  // Huiles & autres
   "Mazola Ghee": "images/mazola-ghee.jpg",
   "Huile Consul": "images/consul-huile-olive.jpg",
   "Huile Bertini": "images/bertini-huile-olive.jpg",
   "Largo": "images/largo-bidon.jpg",
   "Cnice Shampoo": "images/cnice-shampoo.jpg",
-  // Nouvelles images produits (v11)
+  // Lait infantile et entretien
   "Bledilait Junior": "images/bledilait-croissance.jpg",
   "Saoudia petit": "images/saudia-lait-poudre.jpg",
   "Nura grand": "images/nura-lait-poudre.jpg",
   "Nura petit": "images/nura-lait-poudre.jpg",
   "Brix Grand": "images/brix-nettoyant-wc.jpg",
   "Flash": "images/flash-nettoyant-wc.jpg",
-  // Nouvelles images v12 (batch 2)
+  // Lait poudre, conserves, divers
   "TwinCows grand": "images/cows-lait-poudre.jpg",
   "Anchor grand": "images/anchor-grand.jpg",
   "Anchor petit": "images/anchor-grand.jpg",
@@ -1467,11 +1470,9 @@ function loadProductsFromSheet() {
       buildFilters();
       buildGrid();
       injectProductSchema();
-      console.log(`[AHADO] ${products.length} produits chargés depuis Google Sheet`);
     })
     .catch(err => {
       // Silencieux : on garde les données statiques déjà affichées
-      console.log("[AHADO] Données statiques utilisées (Sheet non public ou indisponible)");
     });
 }
 
@@ -1572,7 +1573,7 @@ function buildFilters(){
     const btn=document.createElement("button");
     btn.className="filter-btn"+(cat===activeFilter?" active":"");
     const label = getCatLabel(cat);
-    btn.innerHTML=`${catIcons[cat]||''} ${label} <span class="fbadge">${count}</span>`;
+    btn.innerHTML=`${catIcons[cat]||''} ${escapeHtml(label)} <span class="fbadge">${count}</span>`;
     btn.onclick=()=>{activeFilter=cat;document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");buildGrid();};
     f.appendChild(btn);
   });
@@ -1592,18 +1593,19 @@ function buildGrid(){
     const idx=products.indexOf(product);
     const card=document.createElement("div");
     card.className="card";
-    const opts=product.prices.map((p,pi)=>`<option value="${pi}">${p.label}${p.price===0?' — Sur demande':' — '+p.price.toLocaleString("fr-FR")+' FDJ'}</option>`).join("");
+    const opts=product.prices.map((p,pi)=>`<option value="${pi}">${escapeHtml(p.label)}${p.price===0?' — Sur demande':' — '+p.price.toLocaleString("fr-FR")+' FDJ'}</option>`).join("");
     const imgSrc = product.imgUrl || productImages[product.name] || catImages[product.cat] || '';
+    const safeImgSrc = encodeURI(imgSrc).replace(/"/g,'%22');
     const badgeHtml = product.popular ? `<div class="card-badge">⭐ ${t('badge-popular')}</div>` : '';
     const imgHtml = imgSrc 
-      ? `<div class="card-img-wrap">${badgeHtml}<img src="${imgSrc}" alt="${product.name}" loading="lazy" onerror="this.classList.add('hidden');this.parentNode.querySelector('.card-img-fallback').style.display='flex'"><div class="card-img-fallback" style="display:none;font-size:3.5rem;opacity:0.6;align-items:center;justify-content:center;width:100%;height:100%">${product.icon}</div></div>`
-      : `<div class="card-img-wrap">${badgeHtml}<div class="card-img-fallback">${product.icon}</div></div>`;
+      ? `<div class="card-img-wrap">${badgeHtml}<img src="${safeImgSrc}" alt="${escapeHtml(product.name)}" loading="lazy" onerror="this.classList.add('hidden');this.parentNode.querySelector('.card-img-fallback').style.display='flex'"><div class="card-img-fallback" style="display:none;font-size:3.5rem;opacity:0.6;align-items:center;justify-content:center;width:100%;height:100%">${escapeHtml(product.icon)}</div></div>`
+      : `<div class="card-img-wrap">${badgeHtml}<div class="card-img-fallback">${escapeHtml(product.icon)}</div></div>`;
     card.innerHTML=`
       ${imgHtml}
       <div class="card-header">
-        <span class="card-cat">${getCatLabel(product.cat)}</span>
-        <div class="card-name">${product.name}</div>
-        <div class="card-icon">${product.icon}</div>
+        <span class="card-cat">${escapeHtml(getCatLabel(product.cat))}</span>
+        <div class="card-name">${escapeHtml(product.name)}</div>
+        <div class="card-icon">${escapeHtml(product.icon)}</div>
       </div>
       <div class="card-body">
         <div class="card-order">
@@ -1679,13 +1681,13 @@ function renderCartItems(){
   }
   container.innerHTML=items.map(([key,item])=>`
     <div class="cart-item">
-      <div class="cart-item-icon">${item.icon}</div>
+      <div class="cart-item-icon">${escapeHtml(item.icon)}</div>
       <div class="cart-item-info">
-        <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-sub">${item.label} × ${item.qty}</div>
+        <div class="cart-item-name">${escapeHtml(item.name)}</div>
+        <div class="cart-item-sub">${escapeHtml(item.label)} × ${item.qty}</div>
         <div class="cart-item-price">${item.total.toLocaleString("fr-FR")} FDJ</div>
       </div>
-      <button class="cart-item-rm" onclick="removeFromCart('${key}')">✕</button>
+      <button class="cart-item-rm" onclick="removeFromCart('${escapeHtml(key)}')">✕</button>
     </div>`).join("");
   renderUpsell();
 }
@@ -1725,15 +1727,16 @@ function renderUpsell(){
     const idx = products.indexOf(p);
     const firstPrice = p.prices[0];
     const imgSrc = p.imgUrl || productImages[p.name] || catImages[p.cat] || '';
+    const safeImgSrc = encodeURI(imgSrc).replace(/"/g,'%22');
     const iconHtml = imgSrc
-      ? `<img src="${imgSrc}" alt="${p.name}" style="width:36px;height:36px;object-fit:cover;border-radius:8px;flex-shrink:0" onerror="this.outerHTML='<div class=\\'cart-upsell-icon\\'>${p.icon}</div>'">`
-      : `<div class="cart-upsell-icon">${p.icon}</div>`;
+      ? `<img src="${safeImgSrc}" alt="${escapeHtml(p.name)}" style="width:36px;height:36px;object-fit:cover;border-radius:8px;flex-shrink:0" onerror="this.outerHTML='<div class=\\'cart-upsell-icon\\'>${escapeHtml(p.icon)}</div>'">`
+      : `<div class="cart-upsell-icon">${escapeHtml(p.icon)}</div>`;
     return `
       <div class="cart-upsell-item">
         ${iconHtml}
         <div class="cart-upsell-info">
-          <div class="cart-upsell-name">${p.name}</div>
-          <div class="cart-upsell-price">${firstPrice.label} — ${firstPrice.price.toLocaleString("fr-FR")} FDJ</div>
+          <div class="cart-upsell-name">${escapeHtml(p.name)}</div>
+          <div class="cart-upsell-price">${escapeHtml(firstPrice.label)} — ${firstPrice.price.toLocaleString("fr-FR")} FDJ</div>
         </div>
         <button class="cart-upsell-btn" onclick="addUpsellToCart(${idx}, this)" data-i18n-text="upsell-add">${t('upsell-add')}</button>
       </div>`;
@@ -1784,7 +1787,7 @@ function openCheckout(){
   const summary = document.getElementById("checkoutSummary");
   let html = '';
   items.forEach(item => {
-    html += `<div class="checkout-summary-row"><span>${item.icon} ${item.name} × ${item.qty}</span><span>${item.total.toLocaleString("fr-FR")} FDJ</span></div>`;
+    html += `<div class="checkout-summary-row"><span>${escapeHtml(item.icon)} ${escapeHtml(item.name)} × ${item.qty}</span><span>${item.total.toLocaleString("fr-FR")} FDJ</span></div>`;
   });
   html += `<div class="checkout-summary-row checkout-summary-total"><span>${t('cart-total')}</span><span>${total.toLocaleString("fr-FR")} FDJ</span></div>`;
   summary.innerHTML = html;
@@ -1811,15 +1814,23 @@ function closeCheckout(){
 function validateCheckout(){
   let valid = true;
   const fields = [
-    { id: 'formName', required: true },
-    { id: 'formPhone', required: true },
+    { id: 'formName', required: true, minLen: 2, maxLen: 80 },
+    { id: 'formPhone', required: true, validator: validatePhoneDJ },
     { id: 'formDistrict', required: true },
-    { id: 'formAddress', required: true }
+    { id: 'formAddress', required: true, minLen: 3, maxLen: 200 },
+    { id: 'formNotes', required: false, maxLen: 500 }
   ];
   fields.forEach(f => {
     const el = document.getElementById(f.id);
+    if (!el) return;
     const errorEl = el.parentNode.querySelector('.form-error');
-    if (f.required && !el.value.trim()) {
+    const value = el.value.trim();
+    let fieldValid = true;
+    if (f.required && !value) fieldValid = false;
+    if (value && f.minLen && value.length < f.minLen) fieldValid = false;
+    if (value && f.maxLen && value.length > f.maxLen) fieldValid = false;
+    if (value && f.validator && !f.validator(value)) fieldValid = false;
+    if (!fieldValid) {
       el.classList.add('invalid');
       if (errorEl) errorEl.classList.add('show');
       valid = false;
@@ -1837,6 +1848,16 @@ function validateCheckout(){
     if (paymentErrorEl) paymentErrorEl.classList.remove('show');
   }
   return valid;
+}
+
+/* Valide un numéro de téléphone djiboutien.
+   Accepte : 77123456, 77 12 34 56, +25377123456, 25377123456, 0077123456
+   Rejette : moins de 8 chiffres, plus de 15, caractères non numériques (hors + et espaces) */
+function validatePhoneDJ(phone){
+  // Nettoie : garde + et chiffres uniquement
+  const cleaned = phone.replace(/[\s.\-()]/g, "");
+  // Doit matcher : optionnel +253 ou 00253, puis 8 chiffres commençant par 7 ou 2
+  return /^(\+?253|00253)?[27]\d{7}$/.test(cleaned);
 }
 
 function submitCheckout(){
