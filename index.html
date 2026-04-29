@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Sécurité : Content Security Policy -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://docs.google.com https://plausible.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me;">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -15,7 +14,6 @@
 <meta name="google-site-verification" content="KdMDeZwGDCNe0bcVX-9BQK2wtDW_6t1SJkZBAZEA8-o">
 <link rel="canonical" href="https://ahadoexpress.net/">
 
-<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ahadoexpress.net/">
 <meta property="og:title" content="AHADO EXPRESS — Épicerie en ligne à Djibouti">
@@ -28,448 +26,1811 @@
 <meta property="og:locale:alternate" content="ar_DJ">
 <meta property="og:site_name" content="AHADO EXPRESS">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AHADO EXPRESS — Épicerie en ligne à Djibouti">
 <meta name="twitter:description" content="Commandez vos produits d'épicerie en ligne à Djibouti. Livraison rapide.">
 <meta name="twitter:image" content="https://ahadoexpress.net/og-image.jpg">
 
-<!-- Hreflang (SEO multilingue v10.1) -->
 <link rel="alternate" hreflang="fr" href="https://ahadoexpress.net/">
 <link rel="alternate" hreflang="en" href="https://ahadoexpress.net/?lang=en">
 <link rel="alternate" hreflang="ar" href="https://ahadoexpress.net/?lang=ar">
 <link rel="alternate" hreflang="x-default" href="https://ahadoexpress.net/">
 
-<!-- Favicon -->
 <link rel="icon" type="image/png" href="/favicon.png">
-<meta name="theme-color" content="#1c4a2a">
+<meta name="theme-color" content="#16703a">
 
-<!-- Analytics Plausible (RGPD-friendly, aucun cookie) -->
 <script defer data-domain="ahadoexpress.net" src="https://plausible.io/js/script.tagged-events.js" crossorigin="anonymous"></script>
 <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
+/* ============================================================
+   AHADO EXPRESS · v21 "Bento Modern"
+   Apple / Vercel / Linear · Geist + Fraunces · vert + or
+   ============================================================ */
+
 :root {
-  --ink:#0d1a0f;--forest:#1c4a2a;--leaf:#2d7a46;--mint:#4aad6e;--sage:#d6ead9;
-  --cream:#f7f4ef;--warm:#fdf8f0;--gold:#b8860b;--amber:#e8a820;--wa:#25d366;
-  --white:#ffffff;--muted:#6b7c6e;--border:rgba(28,74,42,0.12);
-  --r:12px;--r-lg:20px;--sh:0 2px 20px rgba(13,26,15,0.08);--sh-lg:0 8px 48px rgba(13,26,15,0.14);
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;}
+  /* Couleurs */
+  --bg: #fafaf7;
+  --bg-card: #ffffff;
+  --bg-soft: #f4f0e8;
+  --ink: #0a0a0a;
+  --ink-soft: #2a2a2a;
+  --muted: #555555;
+  --muted-soft: #888888;
+  --line: rgba(10,10,10,0.06);
+  --line-strong: rgba(10,10,10,0.12);
 
-/* RTL support */
-html[dir="rtl"] body{font-family:'Outfit',sans-serif;}
-html[dir="rtl"] .cart-sidebar{right:auto;left:0;transform:translateX(-100%);box-shadow:8px 0 40px rgba(13,26,15,0.15);}
-html[dir="rtl"] .cart-sidebar.open{transform:translateX(0);}
-html[dir="rtl"] .cart-fab{right:auto;left:26px;}
-html[dir="rtl"] .toast{right:auto;left:20px;}
-html[dir="rtl"] .footer-col a,.footer-col button{text-align:right;}
-html[dir="rtl"] .modal-body ul{padding-left:0;padding-right:18px;}
+  --green: #16703a;
+  --green-deep: #0d4a25;
+  --green-light: #e7f3ec;
+  --gold: #f4c54a;
+  --gold-deep: #d4a72a;
 
-/* LANG SWITCHER */
-.lang-switcher{display:flex;align-items:center;gap:4px;background:var(--sage);border-radius:100px;padding:3px;}
-.lang-btn{border:none;background:none;font-family:'Outfit',sans-serif;font-size:0.75rem;font-weight:600;padding:5px 11px;border-radius:100px;cursor:pointer;color:var(--forest);transition:all .2s;letter-spacing:0.5px;}
-.lang-btn.active{background:var(--forest);color:white;}
-.lang-btn:hover:not(.active){background:rgba(28,74,42,0.12);}
+  --wa: #25d366;
+  --wa-deep: #1fa855;
+  --error: #b91c1c;
 
-.topbar{background:var(--forest);color:rgba(255,255,255,0.75);font-size:0.78rem;text-align:center;padding:8px 16px;}
-.topbar strong{color:var(--amber);}
+  /* Typo */
+  --sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --mono: 'Geist Mono', ui-monospace, monospace;
+  --display: 'Fraunces', 'Times New Roman', serif;
 
-header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:68px;box-shadow:0 2px 16px rgba(13,26,15,0.06);}
-.logo{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:700;color:var(--forest);letter-spacing:-0.5px;line-height:1;}
-.logo em{font-style:normal;color:var(--gold);}
-.logo small{display:block;font-family:'Outfit',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-top:1px;}
-nav{display:flex;align-items:center;gap:8px;}
-.nav-link{font-size:0.85rem;font-weight:500;color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:8px;transition:all .2s;cursor:pointer;background:none;border:none;font-family:'Outfit',sans-serif;}
-.nav-link:hover{color:var(--forest);background:var(--sage);}
-.btn-wa-hdr{display:flex;align-items:center;gap:7px;background:var(--wa);color:white;font-weight:600;font-size:0.82rem;padding:9px 18px;border-radius:100px;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-family:'Outfit',sans-serif;white-space:nowrap;}
-.btn-wa-hdr:hover{background:#1fba59;transform:translateY(-1px);box-shadow:0 4px 16px rgba(37,211,102,0.3);}
-.btn-wa-hdr svg{width:16px;height:16px;flex-shrink:0;}
+  /* Layout */
+  --r-sm: 8px;
+  --r: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-xl: 24px;
+  --shadow-sm: 0 1px 3px rgba(10,10,10,0.04);
+  --shadow: 0 4px 16px rgba(10,10,10,0.06);
+  --shadow-md: 0 12px 32px rgba(10,10,10,0.08);
+  --shadow-lg: 0 24px 64px rgba(10,10,10,0.12);
 
-.hero{background:var(--forest);min-height:520px;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(45,122,70,0.3),transparent 70%),radial-gradient(ellipse 40% 40% at 10% 80%,rgba(184,134,11,0.15),transparent 60%);pointer-events:none;}
-.hero-text{padding:72px 60px 72px 80px;position:relative;z-index:1;}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(232,168,32,0.2);border:1px solid rgba(232,168,32,0.35);color:var(--amber);font-size:0.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:24px;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:20px;}
-.hero h1 span{color:var(--amber);}
-.hero-desc{color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.7;max-width:420px;margin-bottom:36px;}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--ink);font-weight:700;font-size:0.95rem;padding:14px 28px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .25s;box-shadow:0 4px 20px rgba(232,168,32,0.3);}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,168,32,0.4);}
-.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);color:white;font-weight:500;font-size:0.9rem;padding:14px 24px;border-radius:100px;text-decoration:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .25s;}
-.btn-ghost:hover{background:rgba(255,255,255,0.18);}
-.hero-stats{display:flex;gap:32px;margin-top:48px;padding-top:36px;border-top:1px solid rgba(255,255,255,0.1);}
-.hstat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--amber);line-height:1;display:block;}
-.hstat-lbl{font-size:0.72rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.45);display:block;margin-top:4px;}
-.hero-visual{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;padding:60px 60px 60px 20px;}
-.hero-card-stack{position:relative;width:300px;height:320px;}
-.hcard{position:absolute;background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:22px;color:white;animation:float 4s ease-in-out infinite;}
-.hcard:nth-child(1){top:0;left:0;right:60px;animation-delay:0s;}
-.hcard:nth-child(2){top:80px;left:40px;right:0;animation-delay:-1.5s;}
-.hcard:nth-child(3){top:175px;left:15px;right:40px;animation-delay:-3s;}
-@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-.hcard-icon{font-size:1.6rem;margin-bottom:6px;}
-.hcard-label{font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);}
-.hcard-val{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--amber);}
-
-/* ── STATS SECTION ── */
-.stats-section{background:linear-gradient(135deg,var(--forest) 0%,#163d20 100%);padding:52px 80px;position:relative;overflow:hidden;}
-.stats-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 90% 50%,rgba(232,168,32,0.08),transparent 70%);pointer-events:none;}
-.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:1;}
-.stat-item{text-align:center;padding:24px 20px;position:relative;}
-.stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:rgba(255,255,255,0.12);}
-.stat-icon{font-size:1.8rem;display:block;margin-bottom:10px;line-height:1;}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:var(--amber);line-height:1;display:block;letter-spacing:-1px;}
-.stat-num .stat-suffix{font-size:1.8rem;}
-.stat-label{display:block;color:rgba(255,255,255,0.7);font-size:0.82rem;font-weight:500;margin-top:6px;letter-spacing:0.3px;}
-.stat-sublabel{display:block;color:rgba(255,255,255,0.38);font-size:0.72rem;margin-top:3px;}
-@keyframes countUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
-.stat-item.animate{animation:countUp .5s ease forwards;}
-@media(max-width:900px){
-  .stats-section{padding:40px 28px;}
-  .stats-inner{grid-template-columns:repeat(2,1fr);gap:0;}
-  .stat-item:nth-child(2)::after{display:none;}
-  .stat-item:not(:last-child)::after{display:none;}
-  .stat-item:nth-child(1),.stat-item:nth-child(2){border-bottom:1px solid rgba(255,255,255,0.12);}
-}
-@media(max-width:480px){
-  .stats-inner{grid-template-columns:repeat(2,1fr);}
-  .stat-num{font-size:2.2rem;}
-}
-/* ── END STATS ── */
-.trust-band{background:var(--white);border-bottom:1px solid var(--border);padding:18px 80px;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
-.trust-item{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:0.84rem;font-weight:500;}
-.trust-icon{width:34px;height:34px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0;}
-
-.sec-head{text-align:center;margin-bottom:48px;}
-.sec-tag{display:inline-block;background:var(--sage);color:var(--forest);font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:12px;}
-.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--forest);line-height:1.2;}
-.sec-sub{color:var(--muted);font-size:0.95rem;margin-top:8px;}
-
-.how{background:var(--warm);padding:72px 80px;}
-.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:840px;margin:0 auto;}
-.step-card{text-align:center;padding:32px 24px;background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border);transition:all .3s;}
-.step-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);}
-.step-num{width:50px;height:50px;background:var(--forest);color:white;border-radius:50%;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
-.step-card h3{font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:8px;}
-.step-card p{font-size:0.84rem;color:var(--muted);line-height:1.6;}
-
-.catalogue{padding:72px 40px;max-width:1200px;margin:0 auto;}
-.search-bar{display:flex;background:var(--white);border:1.5px solid var(--border);border-radius:100px;overflow:hidden;max-width:480px;margin:0 auto 36px;box-shadow:var(--sh);}
-.search-bar input{flex:1;border:none;outline:none;padding:13px 20px;font-family:'Outfit',sans-serif;font-size:0.9rem;color:var(--ink);background:transparent;}
-.search-bar input::placeholder{color:var(--muted);}
-.search-bar button{background:var(--forest);border:none;color:white;padding:13px 20px;cursor:pointer;transition:background .2s;}
-.search-bar button:hover{background:var(--leaf);}
-
-.filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:36px;}
-.filter-btn{padding:8px 18px;border-radius:100px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);font-family:'Outfit',sans-serif;font-size:0.83rem;font-weight:500;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px;}
-.filter-btn:hover{border-color:var(--leaf);color:var(--forest);}
-.filter-btn.active{background:var(--forest);color:white;border-color:var(--forest);}
-.fbadge{background:var(--sage);color:var(--forest);border-radius:100px;font-size:0.68rem;padding:1px 7px;}
-.filter-btn.active .fbadge{background:rgba(255,255,255,0.22);color:white;}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:22px;}
-.card{background:var(--white);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh);transition:all .3s;display:flex;flex-direction:column;animation:fadeUp .4s ease both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
-.card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);border-color:rgba(28,74,42,0.2);}
-
-/* PRODUCT IMAGE */
-.card-img-wrap{width:100%;height:160px;overflow:hidden;background:linear-gradient(135deg,var(--sage),var(--warm));display:flex;align-items:center;justify-content:center;position:relative;}
-.card-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
-.card:hover .card-img-wrap img{transform:scale(1.05);}
-.card-img-fallback{font-size:3.5rem;opacity:0.6;}
-.card-img-wrap img.hidden{display:none;}
-
-/* BADGE POPULAIRE (v9) */
-.card-badge{position:absolute;top:10px;left:10px;background:linear-gradient(135deg,#d4a017,#f4c430);color:#2a1810;font-size:0.68rem;font-weight:700;padding:4px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;box-shadow:0 2px 8px rgba(212,160,23,0.4);z-index:2;}
-[dir="rtl"] .card-badge{left:auto;right:10px;}
-
-/* PROGRESS BAR LIVRAISON GRATUITE (v9) */
-.delivery-progress{background:var(--sage);border-radius:10px;padding:12px 14px;margin-bottom:12px;}
-.delivery-progress-label{font-size:0.78rem;color:var(--forest);font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
-.delivery-progress-bar{width:100%;height:8px;background:rgba(28,74,42,0.12);border-radius:10px;overflow:hidden;}
-.delivery-progress-fill{height:100%;background:linear-gradient(90deg,var(--leaf),#d4a017);border-radius:10px;transition:width .4s ease;}
-.delivery-progress.complete .delivery-progress-fill{background:linear-gradient(90deg,#22c55e,#16a34a);}
-
-/* CART UPSELL (v10) */
-.cart-upsell{background:var(--warm);border:1px solid var(--border);border-radius:12px;padding:14px;margin-top:14px;}
-.cart-upsell-title{font-size:0.78rem;font-weight:700;color:var(--forest);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
-.cart-upsell-items{display:flex;flex-direction:column;gap:8px;}
-.cart-upsell-item{display:flex;align-items:center;gap:10px;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:8px 10px;}
-.cart-upsell-icon{font-size:1.4rem;flex-shrink:0;}
-.cart-upsell-info{flex:1;min-width:0;}
-.cart-upsell-name{font-size:0.82rem;font-weight:600;color:var(--ink);line-height:1.2;}
-.cart-upsell-price{font-size:0.72rem;color:var(--muted);margin-top:2px;}
-.cart-upsell-btn{background:var(--forest);color:white;border:none;border-radius:100px;padding:6px 12px;font-size:0.72rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s;font-family:'Outfit',sans-serif;}
-.cart-upsell-btn:hover{background:var(--leaf);transform:translateY(-1px);}
-.cart-upsell-btn.added{background:var(--amber);color:var(--ink);}
-
-/* CHECKOUT MODAL FORM (v9) */
-.checkout-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);z-index:9000;display:none;align-items:center;justify-content:center;padding:20px;}
-.checkout-overlay.open{display:flex;animation:fadeIn .25s ease;}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-.checkout-modal{background:var(--white);border-radius:16px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 25px 60px rgba(0,0,0,0.3);animation:slideUp .3s ease;}
-@keyframes slideUp{from{transform:translateY(30px);opacity:0;}to{transform:translateY(0);opacity:1;}}
-.checkout-head{padding:22px 26px 16px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--white);z-index:2;display:flex;align-items:center;justify-content:space-between;}
-.checkout-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--forest);}
-.checkout-close{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--muted);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .2s;}
-.checkout-close:hover{background:var(--sage);color:var(--forest);}
-.checkout-body{padding:22px 26px 26px;}
-.form-group{margin-bottom:16px;}
-.form-label{display:block;font-size:0.82rem;font-weight:600;color:var(--forest);margin-bottom:6px;}
-.form-label .required{color:#dc2626;}
-.form-input,.form-select,.form-textarea{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:11px 14px;font-size:0.95rem;font-family:'Outfit',sans-serif;outline:none;color:var(--ink);background:var(--white);transition:border .2s;box-sizing:border-box;}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--leaf);}
-.form-textarea{resize:vertical;min-height:70px;}
-.form-hint{font-size:0.72rem;color:var(--muted);margin-top:4px;}
-.payment-options{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
-.payment-opt{border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;cursor:pointer;font-size:0.85rem;font-weight:500;transition:all .2s;text-align:center;background:var(--white);display:flex;align-items:center;justify-content:center;gap:6px;}
-.payment-opt:hover{border-color:var(--leaf);background:var(--sage);}
-.payment-opt.selected{border-color:var(--forest);background:var(--forest);color:white;font-weight:600;}
-.checkout-summary{background:var(--sage);border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:0.85rem;}
-.checkout-summary-row{display:flex;justify-content:space-between;margin-bottom:4px;}
-.checkout-summary-total{font-weight:700;color:var(--forest);font-size:1rem;padding-top:6px;border-top:1px solid rgba(28,74,42,0.15);margin-top:6px;}
-.btn-checkout-submit{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--wa);color:white;font-weight:700;font-size:1rem;padding:14px;border-radius:10px;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s;box-shadow:0 4px 15px rgba(37,211,102,0.25);}
-.btn-checkout-submit:hover{background:#1fba59;transform:translateY(-1px);}
-.btn-checkout-submit svg{width:18px;height:18px;fill:white;}
-.form-error{color:#dc2626;font-size:0.78rem;margin-top:4px;display:none;}
-.form-error.show{display:block;}
-.form-input.invalid,.form-select.invalid{border-color:#dc2626;}
-
-@media(max-width:640px){
-  .checkout-modal{max-height:95vh;}
-  .checkout-body{padding:18px 20px 22px;}
-  .payment-options{grid-template-columns:1fr;}
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card-header{padding:14px 22px 12px;background:linear-gradient(135deg,var(--sage),var(--warm));position:relative;border-bottom:1px solid var(--border);}
-.card-cat{font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;color:var(--leaf);margin-bottom:5px;display:block;}
-.card-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--forest);line-height:1.2;}
-.card-icon{position:absolute;right:16px;top:14px;font-size:1.5rem;opacity:0.35;line-height:1;}
-.card-body{padding:18px 22px 22px;flex:1;display:flex;flex-direction:column;}
-.card-order{margin-top:auto;display:flex;flex-direction:column;gap:8px;}
-.card-order-row{display:flex;gap:8px;}
-.qty-input{width:62px;border:1.5px solid var(--border);border-radius:var(--r);padding:10px 6px;font-size:0.95rem;font-family:'Outfit',sans-serif;text-align:center;outline:none;color:var(--ink);transition:border .2s;}
-.qty-input:focus{border-color:var(--leaf);}
-.unit-select{flex:1;border:1.5px solid var(--border);border-radius:var(--r);padding:10px 10px;font-size:0.82rem;font-family:'Outfit',sans-serif;outline:none;color:var(--ink);background:var(--white);cursor:pointer;transition:border .2s;}
-.unit-select:focus{border-color:var(--leaf);}
-.btn-add{width:100%;background:var(--forest);color:white;border:none;border-radius:var(--r);padding:12px;font-size:0.9rem;font-weight:700;font-family:'Outfit',sans-serif;cursor:pointer;white-space:nowrap;transition:all .2s;letter-spacing:0.3px;box-shadow:0 2px 10px rgba(28,74,42,0.2);}
-.btn-add:hover{background:var(--leaf);transform:translateY(-1px);box-shadow:0 4px 16px rgba(28,74,42,0.3);}
-.btn-add.added{background:var(--gold);color:var(--ink);}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
-/* CART SIDEBAR */
-.cart-overlay{position:fixed;inset:0;background:rgba(13,26,15,0.45);backdrop-filter:blur(3px);z-index:490;opacity:0;pointer-events:none;transition:opacity .3s;}
-.cart-overlay.open{opacity:1;pointer-events:all;}
-.cart-sidebar{position:fixed;top:0;right:0;bottom:0;width:375px;max-width:100vw;background:var(--white);z-index:500;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(0.4,0,0.2,1);box-shadow:-8px 0 40px rgba(13,26,15,0.15);}
-.cart-sidebar.open{transform:translateX(0);}
-.cart-head{padding:22px 22px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
-.cart-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--forest);}
-.cart-close{background:var(--sage);border:none;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem;color:var(--forest);display:flex;align-items:center;justify-content:center;transition:all .2s;}
-.cart-close:hover{background:var(--forest);color:white;}
-.cart-items{flex:1;overflow-y:auto;padding:14px 22px;}
-.cart-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:10px;color:var(--muted);}
-.cart-empty-icon{font-size:2.8rem;opacity:0.35;}
-.cart-item{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--border);animation:fadeUp .25s ease;}
-.cart-item-icon{width:40px;height:40px;background:var(--sage);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
-.cart-item-info{flex:1;min-width:0;}
-.cart-item-name{font-weight:600;font-size:0.87rem;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.cart-item-sub{font-size:0.75rem;color:var(--muted);margin-top:2px;}
-.cart-item-price{font-weight:700;color:var(--forest);font-size:0.87rem;white-space:nowrap;margin-top:3px;}
-.cart-item-rm{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;padding:4px;transition:color .2s;align-self:flex-start;}
-.cart-item-rm:hover{color:#c0392b;}
-.cart-foot{padding:18px 22px 26px;border-top:1px solid var(--border);background:var(--warm);}
-.cart-total-row{display:flex;justify-content:space-between;margin-bottom:6px;font-size:0.84rem;color:var(--muted);}
-.cart-total-big{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border);}
-.cart-total-big span:first-child{font-size:1rem;font-weight:600;color:var(--ink);}
-.cart-total-big span:last-child{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--forest);}
-.cart-note{font-size:0.74rem;color:var(--muted);margin-bottom:12px;line-height:1.5;background:var(--sage);border-radius:8px;padding:10px 12px;}
-.btn-wa-cart{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--wa);color:white;font-weight:700;font-size:1rem;padding:15px;border-radius:var(--r);border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .25s;box-shadow:0 4px 20px rgba(37,211,102,0.25);}
-.btn-wa-cart:hover{background:#1fba59;transform:translateY(-1px);}
-.btn-wa-cart svg{width:19px;height:19px;fill:white;}
-.btn-clear-cart{width:100%;background:none;border:1px solid var(--border);color:var(--muted);padding:10px;border-radius:var(--r);cursor:pointer;font-family:'Outfit',sans-serif;font-size:0.82rem;margin-top:8px;transition:all .2s;}
-.btn-clear-cart:hover{color:#c0392b;border-color:#c0392b;}
-
-.cart-fab{position:fixed;bottom:26px;right:26px;background:var(--forest);color:white;border:none;border-radius:100px;padding:13px 20px;display:flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-weight:700;font-size:0.88rem;cursor:pointer;box-shadow:0 8px 32px rgba(13,26,15,0.25);z-index:300;transform:translateY(120px);transition:transform .4s cubic-bezier(0.34,1.56,0.64,1);}
-.cart-fab.visible{transform:translateY(0);}
-.fab-badge{background:var(--amber);color:var(--ink);border-radius:100px;font-size:0.74rem;font-weight:800;padding:2px 8px;}
-.fab-total{color:rgba(255,255,255,0.75);font-weight:400;}
-
-.toast{position:fixed;top:80px;right:20px;background:var(--forest);color:white;padding:10px 20px;border-radius:100px;font-size:0.84rem;font-weight:500;z-index:600;opacity:0;transform:translateY(-8px) scale(0.96);transition:all .3s;pointer-events:none;box-shadow:var(--sh-lg);}
-.toast.show{opacity:1;transform:translateY(0) scale(1);}
-
-/* MODALS */
-.modal-overlay{position:fixed;inset:0;background:rgba(13,26,15,0.5);backdrop-filter:blur(4px);z-index:700;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}
-.modal-overlay.open{opacity:1;pointer-events:all;}
-.modal{background:var(--white);border-radius:var(--r-lg);max-width:680px;width:100%;max-height:88vh;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(13,26,15,0.2);transform:translateY(20px) scale(0.97);transition:transform .3s;}
-.modal-overlay.open .modal{transform:translateY(0) scale(1);}
-.modal-head{padding:26px 30px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;}
-.modal-head h2{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;color:var(--forest);}
-.modal-close{background:var(--sage);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:0.95rem;color:var(--forest);display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;margin-left:12px;}
-.modal-close:hover{background:var(--forest);color:white;}
-.modal-body{padding:22px 30px 30px;overflow-y:auto;font-size:0.87rem;line-height:1.8;color:#3a4a3d;}
-.modal-body h3{font-size:0.98rem;font-weight:700;color:var(--forest);margin:18px 0 7px;}
-.modal-body h3:first-child{margin-top:0;}
-.modal-body p{margin-bottom:9px;}
-.modal-body ul{padding-left:18px;margin-bottom:9px;}
-.modal-body li{margin-bottom:4px;}
-
-/* FOOTER */
-footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:44px;}
-.footer-brand p{font-size:0.84rem;line-height:1.7;max-width:290px;margin:12px 0 18px;}
-.footer-col h4{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--amber);margin-bottom:14px;}
-.footer-col ul{list-style:none;}
-.footer-col li{margin-bottom:8px;}
-.footer-col a,.footer-col button{color:rgba(255,255,255,0.48);text-decoration:none;font-size:0.84rem;background:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif;padding:0;transition:color .2s;text-align:left;}
-.footer-col a:hover,.footer-col button:hover{color:var(--amber);}
-.footer-bottom{padding-top:22px;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;font-size:0.76rem;flex-wrap:wrap;gap:8px;}
-.ftr-links button{background:none;border:none;color:rgba(255,255,255,0.38);font-size:0.76rem;cursor:pointer;font-family:'Outfit',sans-serif;transition:color .2s;}
-.ftr-links button:hover{color:var(--amber);}
-
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;}
-  .hero-visual{display:none;}
-  .hero-text{padding:56px 28px;}
-  .trust-band{padding:18px 28px;gap:20px;}
-  .how{padding:56px 28px;}
-  .steps-row{grid-template-columns:1fr;max-width:320px;}
-  .catalogue{padding:56px 16px;}
-  footer{padding:44px 28px 24px;}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:28px;}
-  .footer-brand{grid-column:1/-1;}
-  header{padding:0 18px;}
-  .nav-link{display:none;}
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
 }
-@media(max-width:540px){
-  .hero-text{padding:44px 18px;}
-  .hero-actions{flex-direction:column;}
-  .hero-stats{gap:18px;}
-  .cart-sidebar{width:100%;}
-  .cart-fab{bottom:16px;right:16px;left:16px;justify-content:center;border-radius:14px;}
-  .footer-grid{grid-template-columns:1fr;}
-  .footer-bottom{flex-direction:column;text-align:center;}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+
+/* ============================================================
+   RTL
+   ============================================================ */
+html[dir="rtl"] body { font-family: var(--sans); }
+html[dir="rtl"] .cart-sidebar { right: auto; left: 0; transform: translateX(-100%); box-shadow: 8px 0 40px rgba(10,10,10,0.12); }
+html[dir="rtl"] .cart-sidebar.open { transform: translateX(0); }
+html[dir="rtl"] .cart-fab { right: auto; left: 24px; }
+html[dir="rtl"] .toast { right: auto; left: 20px; }
+html[dir="rtl"] .modal-body ul { padding-left: 0; padding-right: 22px; }
+
+/* ============================================================
+   TOPBAR · ligne fine, mono technique
+   ============================================================ */
+.topbar {
+  background: var(--ink);
+  color: rgba(255,255,255,0.85);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 9px 16px;
 }
+.topbar strong { color: var(--gold); font-weight: 500; }
+
+/* ============================================================
+   HEADER · Nav en pill flottante (Vercel style)
+   ============================================================ */
+.header-wrap {
+  position: sticky;
+  top: 16px;
+  z-index: 200;
+  padding: 0 20px;
+  margin-top: 16px;
+}
+header {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 10px 14px 10px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+}
+
+.logo {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.logo .dot { color: var(--green); }
+
+.logo small {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-link {
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: none;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all .2s var(--ease);
+  letter-spacing: -0.01em;
+}
+.nav-link:hover { color: var(--ink); background: var(--line); }
+
+.lang-switcher {
+  display: flex;
+  gap: 0;
+  margin: 0 6px;
+}
+.lang-btn {
+  border: none;
+  background: none;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  color: var(--muted);
+  transition: all .2s var(--ease);
+}
+.lang-btn.active {
+  background: var(--ink);
+  color: white;
+}
+.lang-btn:hover:not(.active) { color: var(--ink); }
+
+.btn-wa-hdr {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--green);
+  color: white;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.84rem;
+  padding: 9px 16px;
+  border-radius: 100px;
+  cursor: pointer;
+  border: none;
+  transition: all .25s var(--ease);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+.btn-wa-hdr:hover {
+  background: var(--green-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(22,112,58,0.3);
+}
+.btn-wa-hdr svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* ============================================================
+   HERO BENTO · Grille de cards
+   ============================================================ */
+.hero {
+  max-width: 1280px;
+  margin: 32px auto 0;
+  padding: 0 20px;
+}
+
+.hero-bento {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 280px 280px;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.card-bento {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: 28px;
+  transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+.card-bento:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Card principale (hero) */
+.hero-main {
+  grid-row: 1 / 3;
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+}
+.hero-main::before {
+  /* halo doré décoratif */
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(244,197,74,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 13px;
+  background: rgba(255,255,255,0.14);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  width: fit-content;
+  color: rgba(255,255,255,0.95);
+  letter-spacing: 0.02em;
+}
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(74,222,128,0.6);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+.hero-main h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: white;
+  margin: 12px 0 14px;
+}
+.hero-main h1 span,
+.hero-main h1 em {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 300;
+}
+.hero-main p {
+  color: rgba(255,255,255,0.78);
+  font-size: 0.95rem;
+  max-width: 380px;
+  line-height: 1.55;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: var(--ink);
+  padding: 12px 20px;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 0.88rem;
+  width: fit-content;
+  cursor: pointer;
+  border: none;
+  transition: all .25s var(--ease);
+  font-family: var(--sans);
+  letter-spacing: -0.01em;
+}
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* Stat cards */
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.stat-card .label,
+.stat-card-mono {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+.stat-card .num {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.stat-card .num em {
+  color: var(--green);
+  font-style: italic;
+  font-weight: 400;
+}
+.stat-card .desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Mini product cards in hero */
+.mini-product {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  padding: 20px;
+}
+.mini-product .img-ph {
+  flex: 1;
+  background: var(--bg-soft);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  overflow: hidden;
+  position: relative;
+}
+.mini-product .img-ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mini-product h4 {
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.mini-product .mini-price {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--green);
+  font-weight: 500;
+}
+
+/* ============================================================
+   FEATURES · 4 cards
+   ============================================================ */
+.features {
+  max-width: 1280px;
+  margin: 12px auto 0;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.feature {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: 24px;
+  transition: all .25s var(--ease);
+}
+.feature:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.feature .icon {
+  width: 36px;
+  height: 36px;
+  background: var(--green);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+}
+.feature h3 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.feature p {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ============================================================
+   SECTION HEAD · Discret, mono label + serif title
+   ============================================================ */
+.sec-head {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.sec-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.sec-title {
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.sec-title em { font-style: italic; color: var(--green); font-weight: 300; }
+.sec-sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 10px;
+  font-family: var(--sans);
+}
+
+/* ============================================================
+   HOW · 3 cards bento
+   ============================================================ */
+.how {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 96px 20px;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: 32px 28px;
+  transition: all .25s var(--ease);
+  position: relative;
+}
+.step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+.step-num {
+  font-family: var(--display);
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--green);
+  font-style: italic;
+  line-height: 1;
+  display: block;
+  margin-bottom: 18px;
+  letter-spacing: -0.04em;
+}
+.step-card h3 {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.step-card p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   CATALOGUE
+   ============================================================ */
+.catalogue {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px 96px;
+  position: relative;
+}
+
+.catalogue-tools {
+  position: sticky;
+  top: 86px;
+  z-index: 50;
+  background: var(--bg);
+  padding: 14px 0 12px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.search-bar {
+  display: flex;
+  background: var(--bg-card);
+  border: 1px solid var(--line-strong);
+  border-radius: 100px;
+  overflow: hidden;
+  max-width: 520px;
+  margin: 0 auto 18px;
+  transition: all .2s var(--ease);
+}
+.search-bar:focus-within {
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px rgba(22,112,58,0.1);
+}
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 13px 20px;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: transparent;
+}
+.search-bar input::placeholder { color: var(--muted-soft); }
+.search-bar button {
+  background: var(--ink);
+  border: none;
+  color: white;
+  padding: 0 22px;
+  cursor: pointer;
+  transition: background .2s;
+  font-size: 1rem;
+}
+.search-bar button:hover { background: var(--green); }
+
+.filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.filter-btn {
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-card);
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s var(--ease);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  letter-spacing: -0.01em;
+}
+.filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+.filter-btn.active {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+}
+.fbadge {
+  background: var(--bg-soft);
+  color: var(--muted);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  padding: 1px 7px;
+  font-weight: 400;
+}
+.filter-btn.active .fbadge { background: rgba(255,255,255,0.18); color: white; }
+
+/* ============================================================
+   PRODUCT CARDS · Bento style
+   ============================================================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  transition: all .3s var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  animation: fadeUp .45s var(--ease-out) both;
+  position: relative;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--line-strong);
+}
+
+.card-img-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s var(--ease-out);
+}
+.card:hover .card-img-wrap img { transform: scale(1.05); }
+.card-img-fallback {
+  font-size: 4rem;
+  opacity: 0.55;
+}
+.card-img-wrap img.hidden { display: none; }
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+[dir="rtl"] .card-badge { left: auto; right: 12px; }
+
+.card-header {
+  padding: 16px 18px 12px;
+  background: var(--bg-card);
+  position: relative;
+}
+.card-cat {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--green);
+  margin-bottom: 6px;
+  display: block;
+}
+.card-name {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  padding-right: 32px;
+}
+[dir="rtl"] .card-name { padding-right: 0; padding-left: 32px; }
+.card-icon {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  font-size: 1.4rem;
+  opacity: 0.4;
+  line-height: 1;
+}
+[dir="rtl"] .card-icon { right: auto; left: 16px; }
+
+.card-body {
+  padding: 12px 18px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card-order { margin-top: auto; display: flex; flex-direction: column; gap: 9px; }
+.card-order-row { display: flex; gap: 8px; }
+
+.qty-input {
+  width: 56px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  padding: 10px 6px;
+  font-size: 0.92rem;
+  font-family: var(--mono);
+  font-weight: 500;
+  text-align: center;
+  outline: none;
+  color: var(--ink);
+  background: var(--bg);
+  transition: all .15s;
+}
+.qty-input:focus { border-color: var(--green); background: var(--bg-card); }
+
+.unit-select {
+  flex: 1;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  font-family: var(--sans);
+  font-weight: 400;
+  outline: none;
+  color: var(--ink-soft);
+  background: var(--bg);
+  cursor: pointer;
+  transition: all .15s;
+}
+.unit-select:focus { border-color: var(--green); background: var(--bg-card); }
+
+.btn-add {
+  width: 100%;
+  background: var(--ink);
+  color: white;
+  border: none;
+  border-radius: var(--r-sm);
+  padding: 12px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: all .2s var(--ease);
+  letter-spacing: -0.005em;
+}
+.btn-add:hover { background: var(--green); }
+.btn-add.added { background: var(--green); }
+
+/* ============================================================
+   DELIVERY PROGRESS
+   ============================================================ */
+.delivery-progress {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+.delivery-progress-label {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--ink);
+  font-weight: 400;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.01em;
+}
+.delivery-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.delivery-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  border-radius: 100px;
+  transition: width .4s var(--ease-out);
+}
+.delivery-progress.complete .delivery-progress-fill {
+  background: var(--green);
+}
+
+/* ============================================================
+   CART UPSELL
+   ============================================================ */
+.cart-upsell {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 14px;
+  margin-top: 14px;
+}
+.cart-upsell-title {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--green);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.cart-upsell-items { display: flex; flex-direction: column; gap: 7px; }
+.cart-upsell-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 8px 10px;
+  transition: all .2s;
+}
+.cart-upsell-item:hover { border-color: var(--green); }
+.cart-upsell-icon {
+  font-size: 1.4rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-soft);
+  border-radius: var(--r-sm);
+}
+.cart-upsell-info { flex: 1; min-width: 0; }
+.cart-upsell-name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.cart-upsell-price {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.cart-upsell-btn {
+  background: var(--ink);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 6px 11px;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s;
+}
+.cart-upsell-btn:hover { background: var(--green); }
+.cart-upsell-btn.added { background: var(--green); }
+
+/* ============================================================
+   CHECKOUT MODAL
+   ============================================================ */
+.checkout-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.5);
+  backdrop-filter: blur(6px);
+  z-index: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+.checkout-overlay.open { opacity: 1; pointer-events: all; }
+.checkout-modal {
+  background: var(--bg-card);
+  border-radius: var(--r-xl);
+  max-width: 560px;
+  width: 100%;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(20px) scale(0.97);
+  transition: transform .3s var(--ease-out);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.checkout-overlay.open .checkout-modal { transform: translateY(0) scale(1); }
+
+.checkout-head {
+  padding: 22px 28px 16px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout-title {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.checkout-close {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s;
+}
+.checkout-close:hover { background: var(--ink); color: white; border-color: var(--ink); }
+
+.checkout-body { padding: 22px 28px 26px; overflow-y: auto; }
+
+.checkout-summary {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  font-size: 0.86rem;
+}
+.checkout-summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  color: var(--muted);
+}
+.checkout-summary-row span:last-child { font-family: var(--mono); font-weight: 500; color: var(--ink); }
+.checkout-summary-total {
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.checkout-summary-total span:last-child { color: var(--green); }
+
+.form-group { margin-bottom: 18px; }
+.form-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 7px;
+  letter-spacing: -0.005em;
+}
+.form-label .required { color: var(--green); }
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  padding: 11px 14px;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--ink);
+  background: var(--bg);
+  outline: none;
+  transition: all .2s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--green);
+  background: var(--bg-card);
+  box-shadow: 0 0 0 3px rgba(22,112,58,0.1);
+}
+.form-textarea { resize: vertical; min-height: 70px; }
+.form-hint {
+  font-size: 0.74rem;
+  color: var(--muted-soft);
+  margin-top: 5px;
+}
+
+.payment-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+.payment-opt {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  padding: 10px 8px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--bg);
+  transition: all .2s;
+  user-select: none;
+}
+.payment-opt:hover { border-color: var(--green); color: var(--green); }
+.payment-opt.selected {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+}
+
+.btn-checkout-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--wa);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px;
+  border-radius: var(--r-sm);
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: all .25s var(--ease);
+  margin-top: 4px;
+  letter-spacing: -0.005em;
+}
+.btn-checkout-submit:hover {
+  background: var(--wa-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(37,211,102,0.35);
+}
+.btn-checkout-submit svg { width: 17px; height: 17px; fill: white; }
+
+.form-error {
+  color: var(--error);
+  font-size: 0.76rem;
+  margin-top: 5px;
+  display: none;
+  font-weight: 500;
+}
+.form-error.show { display: block; }
+.form-input.invalid, .form-select.invalid, .form-textarea.invalid {
+  border-color: var(--error);
+  background: #fef2f2;
+}
+
+/* ============================================================
+   CART SIDEBAR
+   ============================================================ */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.4);
+  backdrop-filter: blur(4px);
+  z-index: 490;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+.cart-overlay.open { opacity: 1; pointer-events: all; }
+
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  max-width: 100vw;
+  background: var(--bg-card);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform .35s var(--ease-out);
+  box-shadow: -8px 0 40px rgba(10,10,10,0.12);
+}
+.cart-sidebar.open { transform: translateX(0); }
+
+.cart-head {
+  padding: 22px 22px 16px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart-title {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.cart-close {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s;
+}
+.cart-close:hover { background: var(--ink); color: white; border-color: var(--ink); }
+
+.cart-items { flex: 1; overflow-y: auto; padding: 12px 22px; }
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 12px;
+  color: var(--muted-soft);
+}
+.cart-empty-icon { font-size: 2.6rem; opacity: 0.35; }
+
+.cart-item {
+  display: flex;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+  animation: fadeUp .25s ease;
+}
+.cart-item-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--bg-soft);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.cart-item-info { flex: 1; min-width: 0; }
+.cart-item-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+}
+.cart-item-sub {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted-soft);
+  margin-top: 2px;
+}
+.cart-item-price {
+  font-family: var(--mono);
+  font-weight: 500;
+  color: var(--green);
+  font-size: 0.84rem;
+  margin-top: 4px;
+}
+.cart-item-rm {
+  background: none;
+  border: none;
+  color: var(--muted-soft);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px 8px;
+  transition: color .2s;
+  align-self: flex-start;
+}
+.cart-item-rm:hover { color: var(--error); }
+
+.cart-foot {
+  padding: 18px 22px 24px;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+.cart-total-row span:last-child { font-family: var(--mono); }
+.cart-total-big {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.cart-total-big span:first-child {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.cart-total-big span:last-child {
+  font-family: var(--display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--green);
+  letter-spacing: -0.02em;
+}
+.cart-note {
+  font-size: 0.74rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+  line-height: 1.5;
+  background: var(--bg-soft);
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
+}
+
+.btn-wa-cart {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--wa);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px;
+  border-radius: var(--r-sm);
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: all .25s var(--ease);
+  letter-spacing: -0.005em;
+}
+.btn-wa-cart:hover {
+  background: var(--wa-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(37,211,102,0.35);
+}
+.btn-wa-cart svg { width: 18px; height: 18px; fill: white; }
+
+.btn-clear-cart {
+  width: 100%;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--muted-soft);
+  padding: 10px;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  margin-top: 8px;
+  transition: all .2s;
+}
+.btn-clear-cart:hover { color: var(--error); border-color: var(--error); }
+
+/* ============================================================
+   CART FAB
+   ============================================================ */
+.cart-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--ink);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 13px 20px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.86rem;
+  cursor: pointer;
+  box-shadow: 0 12px 32px rgba(10,10,10,0.25);
+  z-index: 300;
+  transform: translateY(140px);
+  transition: transform .4s cubic-bezier(0.34, 1.56, 0.64, 1), background .25s;
+  letter-spacing: -0.005em;
+}
+.cart-fab:hover { background: var(--green); }
+.cart-fab.visible { transform: translateY(0); }
+.fab-badge {
+  background: var(--green);
+  color: white;
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 2px 8px;
+}
+.cart-fab:hover .fab-badge { background: white; color: var(--green); }
+.fab-total {
+  font-family: var(--mono);
+  color: rgba(255,255,255,0.65);
+  font-weight: 400;
+  font-size: 0.78rem;
+}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+.toast {
+  position: fixed;
+  top: 100px;
+  right: 24px;
+  background: var(--ink);
+  color: white;
+  padding: 11px 20px;
+  border-radius: 100px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  z-index: 600;
+  opacity: 0;
+  transform: translateY(-12px) scale(0.95);
+  transition: all .25s var(--ease);
+  pointer-events: none;
+  box-shadow: var(--shadow-md);
+}
+.toast.show { opacity: 1; transform: translateY(0) scale(1); }
+
+/* ============================================================
+   MODALS
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.5);
+  backdrop-filter: blur(6px);
+  z-index: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--bg-card);
+  border-radius: var(--r-xl);
+  max-width: 640px;
+  width: 100%;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(20px) scale(0.97);
+  transition: transform .3s var(--ease-out);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.modal-overlay.open .modal { transform: translateY(0) scale(1); }
+
+.modal-head {
+  padding: 22px 28px 18px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.modal-head h2 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.modal-close {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+.modal-close:hover { background: var(--ink); color: white; border-color: var(--ink); }
+
+.modal-body {
+  padding: 22px 28px 28px;
+  overflow-y: auto;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.modal-body h3 {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 20px 0 8px;
+  letter-spacing: -0.01em;
+}
+.modal-body h3:first-child { margin-top: 0; }
+.modal-body p { margin-bottom: 10px; }
+.modal-body ul { padding-left: 22px; margin-bottom: 12px; }
+.modal-body li { margin-bottom: 5px; }
+
+/* ============================================================
+   FOOTER · Bento minimal
+   ============================================================ */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.55);
+  padding: 64px 20px 28px;
+  margin-top: 64px;
+}
+
+.footer-grid {
+  max-width: 1280px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+}
+.footer-brand .logo {
+  color: white;
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+}
+.footer-brand .logo .dot { color: var(--gold); }
+.footer-brand .logo small { color: rgba(255,255,255,0.4); }
+.footer-brand p {
+  font-size: 0.86rem;
+  line-height: 1.65;
+  max-width: 320px;
+  margin: 12px 0 20px;
+  color: rgba(255,255,255,0.55);
+}
+
+.footer-col h4 {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 8px; }
+.footer-col a, .footer-col button {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: 0.86rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  padding: 0;
+  transition: color .2s;
+  text-align: left;
+  letter-spacing: -0.005em;
+}
+.footer-col a:hover, .footer-col button:hover { color: var(--gold); }
+
+.footer-bottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: rgba(255,255,255,0.4);
+}
+.ftr-links button {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.4);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  cursor: pointer;
+  transition: color .2s;
+}
+.ftr-links button:hover { color: var(--gold); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .hero-bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 320px 240px 240px;
+  }
+  .hero-main { grid-row: 1; grid-column: 1 / -1; }
+  .features { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .header-wrap { padding: 0 14px; top: 12px; margin-top: 12px; }
+  header { padding: 8px 12px 8px 18px; border-radius: 100px; }
+  .logo { font-size: 0.92rem; }
+  .logo small { display: none; }
+  .nav-link { display: none; }
+  .lang-btn { padding: 5px 8px; font-size: 0.66rem; }
+  .btn-wa-hdr { padding: 8px 12px; font-size: 0.78rem; }
+  .btn-wa-hdr span { display: none; }
+  .btn-wa-hdr svg { width: 16px; height: 16px; }
+
+  .hero { margin-top: 20px; padding: 0 14px; }
+  .hero-bento {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+  .hero-main { grid-row: auto; grid-column: auto; min-height: 360px; padding: 24px; }
+  .hero-main h1 { font-size: clamp(2.2rem, 9vw, 2.8rem); }
+  .stat-card, .mini-product { min-height: 180px; padding: 22px; }
+
+  .features { padding: 0 14px; grid-template-columns: 1fr 1fr; }
+  .feature { padding: 20px; }
+
+  .how { padding: 64px 14px; }
+  .steps-grid { grid-template-columns: 1fr; }
+
+  .catalogue { padding: 0 14px 64px; }
+  .catalogue-tools { top: 78px; padding: 12px 0 10px; }
+
+  .grid { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 10px; }
+  .card-img-wrap { height: 130px; }
+  .card-header { padding: 12px 13px 10px; }
+  .card-name { font-size: 0.92rem; padding-right: 22px; }
+  [dir="rtl"] .card-name { padding-right: 0; padding-left: 22px; }
+  .card-cat { font-size: 0.6rem; }
+  .card-icon { right: 11px; top: 10px; font-size: 1.1rem; }
+  [dir="rtl"] .card-icon { right: auto; left: 11px; }
+  .card-body { padding: 11px 13px 13px; }
+  .qty-input { width: 44px; padding: 9px 4px; font-size: 0.85rem; }
+  .unit-select { padding: 9px 8px; font-size: 0.74rem; }
+  .btn-add { padding: 10px; font-size: 0.8rem; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-brand { grid-column: 1 / -1; }
+  footer { padding: 48px 14px 24px; }
+}
+
+@media (max-width: 540px) {
+  .features { grid-template-columns: 1fr; }
+  .cart-sidebar { width: 100%; }
+  .cart-fab {
+    bottom: 14px;
+    right: 14px;
+    left: 14px;
+    justify-content: center;
+    border-radius: var(--r);
+  }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .payment-options { grid-template-columns: 1fr 1fr; }
+  .checkout-modal { max-height: 95vh; }
+  .checkout-body { padding: 18px 20px 22px; }
+  .modal-body { padding: 20px 22px 24px; }
+  .modal-head { padding: 20px 22px 14px; }
+  .modal-head h2 { font-size: 1.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Ribbon diagonal marketing saison */
+.season-ribbon {
+  position: absolute;
+  top: 12px;
+  right: -32px;
+  transform: rotate(45deg);
+  padding: 4px 40px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  white-space: nowrap;
+}
+.season-ribbon.ramadan {
+  background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+  color: white;
+}
+.season-ribbon.saison-chaude {
+  background: linear-gradient(135deg, #F59E0B 0%, #DC2626 100%);
+  color: white;
+}
+.season-ribbon.rentree {
+  background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
+  color: white;
+}
+.season-ribbon.aid {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: white;
+}
+
 </style>
 </head>
 <body>
 
-<div class="topbar" id="topbar">🚚 Livraison J+1 à Djibouti-Ville &nbsp;|&nbsp; Paiement : <strong>Cash · Waafi · CAC Pay · D-Money · Saba Pay</strong> &nbsp;|&nbsp; 📱 +253 77 78 83 02</div>
+<div class="topbar" id="topbar">🚚 Livraison J+1 à Djibouti-Ville &nbsp;·&nbsp; <strong>Cash · Waafi · CAC Pay · D-Money · Saba Pay</strong> &nbsp;·&nbsp; +253 77 78 83 02</div>
 
-<header>
-  <div class="logo">AHADO<em> EXPRESS</em><small id="logo-sub">Épicerie en ligne · Djibouti</small></div>
-  <nav>
-    <button class="nav-link" onclick="scrollTo({top:document.getElementById('catalogue').offsetTop-80,behavior:'smooth'})" data-i18n="nav-catalogue">Catalogue</button>
-    <button class="nav-link" onclick="openModal('livraison')" data-i18n="nav-livraison">Livraison</button>
-    <button class="nav-link" onclick="openModal('cgv')" data-i18n="nav-cgv">CGV</button>
-    <!-- LANG SWITCHER -->
-    <div class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('ar')">AR</button>
-    </div>
-    <a href="https://wa.me/25377788302" target="_blank" rel="noopener noreferrer" class="btn-wa-hdr">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      <span data-i18n="btn-order-wa">Commander sur WhatsApp</span>
-    </a>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-text">
-    <div class="hero-tag" data-i18n="hero-tag">🚚 Livraison à Djibouti-Ville</div>
-    <h1 data-i18n="hero-h1">Votre épicerie,<br><span data-i18n="hero-h1-span">livrée à domicile</span></h1>
-    <p class="hero-desc" data-i18n="hero-desc">Riz, pâtes, lait en poudre, épices et produits d'entretien — commandez en ligne et recevez vos produits sous 24h.</p>
-    <div class="hero-actions">
-      <a href="#catalogue" class="btn-primary" data-i18n="hero-cta">🛒 Voir le catalogue</a>
-      <a href="https://wa.me/25377788302" target="_blank" rel="noopener noreferrer" class="btn-ghost">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span data-i18n="hero-wa-direct">WhatsApp direct</span>
+<div class="header-wrap">
+  <header>
+    <div class="logo">AHADO<span class="dot">·</span>EXPRESS<small id="logo-sub">Épicerie en ligne · Djibouti</small></div>
+    <nav>
+      <button class="nav-link" onclick="scrollTo({top:document.getElementById('catalogue').offsetTop-90,behavior:'smooth'})" data-i18n="nav-catalogue">Catalogue</button>
+      <button class="nav-link" onclick="openModal('livraison')" data-i18n="nav-livraison">Livraison</button>
+      <button class="nav-link" onclick="openModal('cgv')" data-i18n="nav-cgv">CGV</button>
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('ar')">AR</button>
+      </div>
+      <a href="https://wa.me/25377788302" target="_blank" rel="noopener noreferrer" class="btn-wa-hdr">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-i18n="btn-order-wa">Commander</span>
       </a>
-    </div>
-    <div class="hero-stats">
-      <div><span class="hstat-num">100+</span><span class="hstat-lbl" data-i18n="stat-produits">Produits</span></div>
-      <div><span class="hstat-num">J+1</span><span class="hstat-lbl" data-i18n="stat-livraison">Livraison</span></div>
-      <div><span class="hstat-num">3</span><span class="hstat-lbl" data-i18n="stat-zones">Zones livrées</span></div>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="hero-card-stack">
-      <div class="hcard"><div class="hcard-icon">🌾</div><div class="hcard-label">Riz Falak Premium</div><div class="hcard-val">2 200 FDJ / sac</div></div>
-      <div class="hcard"><div class="hcard-icon">🥛</div><div class="hcard-label">Coast Lait Poudre</div><div class="hcard-val">5 200 FDJ / boîte</div></div>
-      <div class="hcard"><div class="hcard-icon">🍝</div><div class="hcard-label">Pasta Bahar</div><div class="hcard-val">1 500 FDJ / ½ CT</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── STATS DE CONFIANCE ── -->
-<section class="stats-section" id="stats-section">
-  <div class="stats-inner">
-    <div class="stat-item">
-      <span class="stat-icon">👥</span>
-      <span class="stat-num" data-target="520" data-suffix="+">0<span class="stat-suffix">+</span></span>
-      <span class="stat-label" data-i18n="stat-clients">Clients satisfaits</span>
-      <span class="stat-sublabel" data-i18n="stat-clients-sub">depuis le lancement</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-icon">📦</span>
-      <span class="stat-num" data-target="1200" data-suffix="+">0<span class="stat-suffix">+</span></span>
-      <span class="stat-label" data-i18n="stat-orders">Commandes livrées</span>
-      <span class="stat-sublabel" data-i18n="stat-orders-sub">à Djibouti-Ville</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-icon">⭐</span>
-      <span class="stat-num" data-target="98" data-suffix="%">0<span class="stat-suffix">%</span></span>
-      <span class="stat-label" data-i18n="stat-satisfaction">Taux de satisfaction</span>
-      <span class="stat-sublabel" data-i18n="stat-satisfaction-sub">clients fidèles</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-icon">🚀</span>
-      <span class="stat-num" data-target="24" data-suffix="h">0<span class="stat-suffix">h</span></span>
-      <span class="stat-label" data-i18n="stat-delivery">Livraison garantie</span>
-      <span class="stat-sublabel" data-i18n="stat-delivery-sub">chrono après commande</span>
-    </div>
-  </div>
-</section>
-
-<div class="trust-band">
-  <div class="trust-item"><div class="trust-icon">🚚</div><span data-i18n="trust-1">Livraison rapide J+1</span></div>
-  <div class="trust-item"><div class="trust-icon">💬</div><span data-i18n="trust-2">Commande via WhatsApp</span></div>
-  <div class="trust-item"><div class="trust-icon">💳</div><span data-i18n="trust-3">Cash · Waafi · CAC Pay · D-Money · Saba Pay</span></div>
-  <div class="trust-item"><div class="trust-icon">🛡️</div><span data-i18n="trust-4">Satisfait ou remboursé</span></div>
-  <div class="trust-item"><div class="trust-icon">📦</div><span data-i18n="trust-5">100+ produits disponibles</span></div>
+    </nav>
+  </header>
 </div>
 
-<section class="how">
+<!-- HERO BENTO -->
+<section class="hero">
+  <div class="hero-bento">
+    <div class="card-bento hero-main">
+      <div class="hero-badge" data-i18n="hero-tag">🚚 Livraison à Djibouti-Ville</div>
+      <div>
+        <h1 data-i18n="hero-h1">Votre épicerie,<br><span>livrée à domicile</span></h1>
+        <p data-i18n="hero-desc">Riz, pâtes, lait en poudre, épices et produits d'entretien — commandez en ligne et recevez vos produits sous 24h.</p>
+      </div>
+      <a href="#catalogue" class="hero-cta" data-i18n="hero-cta">Voir le catalogue →</a>
+    </div>
+
+    <div class="card-bento stat-card">
+      <span class="label" data-i18n="stat-produits">Produits</span>
+      <div>
+        <div class="num">158<em>+</em></div>
+        <div class="desc" data-i18n="stat-clients-sub">Références en stock</div>
+      </div>
+    </div>
+
+    <div class="card-bento mini-product">
+      <div class="img-ph"><img src="images/falak-extreme.jpg" alt="Falak Premium" loading="lazy" onerror="this.outerHTML='🌾'"></div>
+      <h4>Falak Premium</h4>
+      <span class="mini-price">2 200 FDJ · Sac 5 Kg</span>
+    </div>
+
+    <div class="card-bento stat-card">
+      <span class="label" data-i18n="stat-livraison">Livraison</span>
+      <div>
+        <div class="num"><em>J+1</em></div>
+        <div class="desc" data-i18n="stat-orders-sub">à Djibouti-Ville</div>
+      </div>
+    </div>
+
+    <div class="card-bento mini-product">
+      <div class="img-ph"><img src="images/anchor-grand.jpg" alt="Anchor Lait" loading="lazy" onerror="this.outerHTML='🥛'"></div>
+      <h4>Anchor Lait</h4>
+      <span class="mini-price">4 600 FDJ · Boîte</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="feature">
+    <div class="icon">⚡</div>
+    <h3 data-i18n="trust-2">Commande WhatsApp</h3>
+    <p data-i18n="feat-1-desc">En un clic, sans création de compte ni application.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">💳</div>
+    <h3 data-i18n="feat-2-title">Paiements locaux</h3>
+    <p data-i18n="trust-3">Cash · Waafi · CAC Pay · D-Money · Saba Pay</p>
+  </div>
+  <div class="feature">
+    <div class="icon">🏪</div>
+    <h3 data-i18n="feat-3-title">Boutique locale</h3>
+    <p data-i18n="feat-3-desc">Une équipe djiboutienne au service des familles.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">🌍</div>
+    <h3 data-i18n="feat-4-title">Trilingue</h3>
+    <p data-i18n="feat-4-desc">Disponible en français, anglais et arabe.</p>
+  </div>
+</div>
+
+<!-- HOW -->
+<section class="how" id="stats-section">
   <div class="sec-head">
-    <div class="sec-tag" data-i18n="how-tag">Comment ça marche</div>
+    <div class="sec-tag" data-i18n="how-tag">— Comment ça marche</div>
     <h2 class="sec-title" data-i18n="how-title">Commander en 3 étapes</h2>
     <p class="sec-sub" data-i18n="how-sub">Sans application, sans création de compte</p>
   </div>
-  <div class="steps-row">
-    <div class="step-card"><div class="step-num">1</div><h3 data-i18n="step1-title">Parcourez le catalogue</h3><p data-i18n="step1-desc">Sélectionnez vos produits, choisissez la quantité et le format, ajoutez au panier.</p></div>
-    <div class="step-card"><div class="step-num">2</div><h3 data-i18n="step2-title">Envoyez sur WhatsApp</h3><p data-i18n="step2-desc">Votre commande est générée automatiquement et envoyée sur WhatsApp en un clic.</p></div>
-    <div class="step-card"><div class="step-num">3</div><h3 data-i18n="step3-title">Recevez chez vous</h3><p data-i18n="step3-desc">Livraison sous 24h à Djibouti-Ville. Paiement à la livraison ou Mobile Money.</p></div>
+  <div class="steps-grid">
+    <div class="step-card stat-item" style="display:none">
+      <span class="stat-num" data-target="520" data-suffix="+">0<span class="stat-suffix">+</span></span>
+    </div>
+    <div class="step-card stat-item" style="display:none">
+      <span class="stat-num" data-target="1200" data-suffix="+">0<span class="stat-suffix">+</span></span>
+    </div>
+    <div class="step-card stat-item" style="display:none">
+      <span class="stat-num" data-target="98" data-suffix="%">0<span class="stat-suffix">%</span></span>
+    </div>
+    <div class="step-card stat-item" style="display:none">
+      <span class="stat-num" data-target="24" data-suffix="h">0<span class="stat-suffix">h</span></span>
+    </div>
+    <div class="step-card"><span class="step-num">01</span><h3 data-i18n="step1-title">Parcourez le catalogue</h3><p data-i18n="step1-desc">Sélectionnez vos produits, choisissez la quantité et le format, ajoutez au panier.</p></div>
+    <div class="step-card"><span class="step-num">02</span><h3 data-i18n="step2-title">Envoyez sur WhatsApp</h3><p data-i18n="step2-desc">Votre commande est générée automatiquement et envoyée sur WhatsApp en un clic.</p></div>
+    <div class="step-card"><span class="step-num">03</span><h3 data-i18n="step3-title">Recevez chez vous</h3><p data-i18n="step3-desc">Livraison sous 24h à Djibouti-Ville. Paiement à la livraison ou Mobile Money.</p></div>
   </div>
 </section>
 
+<!-- CATALOGUE -->
 <section class="catalogue" id="catalogue">
   <div class="sec-head">
-    <div class="sec-tag" data-i18n="cat-tag">Catalogue</div>
+    <div class="sec-tag" data-i18n="cat-tag">— Catalogue</div>
     <h2 class="sec-title" data-i18n="cat-title">Nos Produits</h2>
     <p class="sec-sub" data-i18n="cat-sub">Sélectionnez vos articles et commandez directement sur WhatsApp</p>
   </div>
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Rechercher un produit..." oninput="buildGrid()" data-i18n-placeholder="search-placeholder">
-    <button>🔍</button>
+  <div class="catalogue-tools">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Rechercher un produit..." oninput="buildGrid()" data-i18n-placeholder="search-placeholder">
+      <button>🔍</button>
+    </div>
+    <div class="filters" id="filters"></div>
   </div>
-  <div class="filters" id="filters"></div>
   <div class="grid" id="grid"></div>
 </section>
 
+<!-- CART SIDEBAR -->
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 <div class="cart-sidebar" id="cartSidebar">
   <div class="cart-head">
@@ -479,11 +1840,10 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
   <div class="cart-items" id="cartItems">
     <div class="cart-empty"><div class="cart-empty-icon">🛒</div><p data-i18n="cart-empty">Votre panier est vide</p></div>
   </div>
-  <div id="cartUpsell" style="display:none;padding:0 20px 8px;"></div>
+  <div id="cartUpsell" style="display:none;padding:0 22px 8px;"></div>
   <div class="cart-foot" id="cartFoot" style="display:none">
-    <!-- PROGRESS BAR LIVRAISON GRATUITE (v9) -->
     <div class="delivery-progress" id="deliveryProgress">
-      <div class="delivery-progress-label" id="deliveryProgressLabel">🚚 <span data-i18n="delivery-progress-label">Plus que 5 000 FDJ pour la livraison gratuite</span></div>
+      <div class="delivery-progress-label" id="deliveryProgressLabel">🚚 <span>Plus que 5 000 FDJ pour la livraison gratuite</span></div>
       <div class="delivery-progress-bar"><div class="delivery-progress-fill" id="deliveryProgressFill" style="width:0%"></div></div>
     </div>
     <div class="cart-total-row"><span data-i18n="cart-subtotal">Sous-total</span><span id="cartSubtotal">0 FDJ</span></div>
@@ -498,7 +1858,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
   </div>
 </div>
 
-<!-- CHECKOUT MODAL (v9) - Formulaire commande structuré -->
+<!-- CHECKOUT MODAL -->
 <div class="checkout-overlay" id="checkoutOverlay" onclick="if(event.target===this)closeCheckout()">
   <div class="checkout-modal">
     <div class="checkout-head">
@@ -604,7 +1964,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
       <h3 data-i18n="liv-track-title">Suivi de commande</h3>
       <p data-i18n="liv-track-desc">Vous recevrez une confirmation par WhatsApp dans l'heure suivant votre commande. Le livreur vous contactera directement avant de se présenter.</p>
       <h3 data-i18n="liv-miss-title">Livraison manquée</h3>
-      <p data-i18n="liv-miss-desc">En cas d'absence lors de la livraison, un message vous sera envoyé. La commande peut être reprogrammée gratuitement une fois. Au-delà, des frais supplémentaires peuvent s'appliquer.</p>
+      <p data-i18n="liv-miss-desc">En cas d'absence lors de la livraison, un message vous sera envoyé. La commande peut être reprogrammée gratuitement une fois.</p>
     </div>
   </div>
 </div>
@@ -624,7 +1984,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
       <p>Modes de paiement acceptés : <strong>Cash</strong>, <strong>Waafi</strong>, <strong>CAC Pay</strong>, <strong>D-Money</strong> et <strong>Saba Pay</strong>.</p>
       <h3>5. Retours</h3>
       <p>Si un produit est livré endommagé ou non conforme, AHADO EXPRESS s'engage à le remplacer ou rembourser. Réclamation dans les <strong>24h suivant la livraison</strong>.</p>
-      <p style="margin-top:18px;font-size:0.76rem;color:var(--muted);">Dernière mise à jour : Avril 2025</p>
+      <p style="margin-top:16px;font-size:0.78rem;color:var(--muted-soft);">Dernière mise à jour : Avril 2025</p>
     </div>
   </div>
 </div>
@@ -643,7 +2003,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
       </ul>
       <h3>Procédure de réclamation</h3>
       <p>Envoyez une photo + numéro de commande sur WhatsApp au <strong>+253 77 78 83 02</strong> dans les <strong>24h</strong> suivant la réception.</p>
-      <p style="margin-top:18px;font-size:0.76rem;color:var(--muted);">Dernière mise à jour : Avril 2025</p>
+      <p style="margin-top:16px;font-size:0.78rem;color:var(--muted-soft);">Dernière mise à jour : Avril 2025</p>
     </div>
   </div>
 </div>
@@ -657,18 +2017,19 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
       <p>Lors de votre commande via WhatsApp, AHADO EXPRESS collecte : nom, numéro de téléphone, adresse de livraison, et détail des commandes.</p>
       <h3>Utilisation des données</h3>
       <p>Ces données servent exclusivement à traiter et livrer vos commandes. Elles ne sont jamais vendues ni partagées.</p>
-      <p style="margin-top:18px;font-size:0.76rem;color:var(--muted);">Dernière mise à jour : Avril 2025</p>
+      <p style="margin-top:16px;font-size:0.78rem;color:var(--muted-soft);">Dernière mise à jour : Avril 2025</p>
     </div>
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo" style="color:white">AHADO<em> EXPRESS</em></div>
+      <div class="logo">AHADO<span class="dot">·</span>EXPRESS<small>Épicerie en ligne · Djibouti</small></div>
       <p data-i18n="footer-desc">Votre épicerie en ligne à Djibouti. Commandez facilement via WhatsApp et recevez vos produits chez vous sous 24h.</p>
       <a href="https://wa.me/25377788302" target="_blank" rel="noopener noreferrer" class="btn-wa-hdr" style="display:inline-flex">
-        <svg viewBox="0 0 24 24" fill="white" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         +253 77 78 83 02
       </a>
     </div>
@@ -687,7 +2048,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:56px 80px 30px;
         <li><a href="https://wa.me/25377788302" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
         <li><a href="#">Djibouti-Ville</a></li>
       </ul>
-      <h4 style="margin-top:22px" data-i18n="footer-payment">Paiement accepté</h4>
+      <h4 style="margin-top:24px" data-i18n="footer-payment">Paiement accepté</h4>
       <ul>
         <li><a href="#">💵 Cash</a></li>
         <li><a href="#">📱 Waafi</a></li>
@@ -836,7 +2197,13 @@ const translations = {
     "upsell-add": "+ Ajouter",
     "upsell-added": "✓ Ajouté",
     "toast-form-incomplete": "Merci de remplir les champs obligatoires",
-    "toast-order-sent": "Commande envoyée sur WhatsApp !"
+    "toast-order-sent": "Commande envoyée sur WhatsApp !",
+    "feat-1-desc": "En un clic, sans création de compte ni application.",
+    "feat-2-title": "Paiements locaux",
+    "feat-3-title": "Boutique locale",
+    "feat-3-desc": "Une équipe djiboutienne au service des familles.",
+    "feat-4-title": "Trilingue",
+    "feat-4-desc": "Disponible en français, anglais et arabe."
   },
   en: {
     "logo-sub": "Online Grocery · Djibouti",
@@ -945,7 +2312,13 @@ const translations = {
     "upsell-add": "+ Add",
     "upsell-added": "✓ Added",
     "toast-form-incomplete": "Please fill in all required fields",
-    "toast-order-sent": "Order sent on WhatsApp!"
+    "toast-order-sent": "Order sent on WhatsApp!",
+    "feat-1-desc": "One click, no account or app required.",
+    "feat-2-title": "Local payments",
+    "feat-3-title": "Local shop",
+    "feat-3-desc": "A Djiboutian team serving families.",
+    "feat-4-title": "Trilingual",
+    "feat-4-desc": "Available in French, English and Arabic."
   },
   ar: {
     "logo-sub": "بقالة إلكترونية · جيبوتي",
@@ -1054,7 +2427,13 @@ const translations = {
     "upsell-add": "+ إضافة",
     "upsell-added": "✓ تمت الإضافة",
     "toast-form-incomplete": "يرجى ملء الحقول المطلوبة",
-    "toast-order-sent": "تم إرسال الطلب عبر واتساب!"
+    "toast-order-sent": "تم إرسال الطلب عبر واتساب!",
+    "feat-1-desc": "بنقرة واحدة، بدون حساب أو تطبيق.",
+    "feat-2-title": "طرق دفع محلية",
+    "feat-3-title": "متجر محلي",
+    "feat-3-desc": "فريق جيبوتي في خدمة العائلات.",
+    "feat-4-title": "ثلاثي اللغات",
+    "feat-4-desc": "متوفر بالفرنسية والإنجليزية والعربية."
   }
 };
 
@@ -1135,110 +2514,90 @@ function setLang(lang) {
    PRODUCT IMAGES — Photos locales (dossier /images/)
    ============================================================ */
 const productImages = {
-  // Riz
-  "Assad Premium": "images/asad-gold.jpg",
-  "Assad Gold": "images/asad-gold.jpg",
-  "Falak Extreme": "images/falak-extreme.jpg",
-  "Falak Premium": "images/falak-extreme.jpg",
-  // Huiles & autres
-  "Mazola Ghee": "images/mazola-ghee.jpg",
-  "Huile Consul": "images/consul-huile-olive.jpg",
-  "Huile Bertini": "images/bertini-huile-olive.jpg",
-  "Largo": "images/largo-bidon.jpg",
-  "Cnice Shampoo": "images/cnice-shampoo.jpg",
-  // Lait infantile et entretien
-  "Bledilait Junior": "images/bledilait-croissance.jpg",
-  "Saoudia petit": "images/saudia-lait-poudre.jpg",
-  "Nura grand": "images/nura-lait-poudre.jpg",
-  "Nura petit": "images/nura-lait-poudre.jpg",
-  "Brix Grand": "images/brix-nettoyant-wc.jpg",
-  "Flash": "images/flash-nettoyant-wc.jpg",
-  // Lait poudre, conserves, divers
-  "TwinCows grand": "images/cows-lait-poudre.jpg",
-  "Anchor grand": "images/anchor-grand.jpg",
-  "Anchor petit": "images/anchor-grand.jpg",
-  "Nursi 1": "images/nursie-1.jpg",
-  "Nursi 2": "images/nursie-2.jpg",
-  "Nursi 3": "images/nursie-2.jpg",
-  "Hanny": "images/hanny-lait-poudre.jpg",
-  "Bledilait 2": "images/bledilait-2.jpg",
-  "Bledilait 3": "images/bledilait-3.jpg",
-  "Bledilait 1": "images/bledilait-2.jpg",
-  "Mazola Ghee": "images/mazola-ghee.jpg",
-  "Nido +1 petit format": "images/nido-forti-croissance.jpg",
-  "Nido +3 grand format": "images/nido-forti-croissance.jpg",
-  // Nouveaux produits
-  "Bertini Huile d'Olive": "images/bertini-huile-olive.jpg",
-  "Huile Bertini": "images/bertini-huile-olive.jpg",
-  "Virginia Garden Huile d'Olive": "images/virginia-garden-huile-olive.jpg",
-  "Consul Huile d'Olive": "images/consul-huile-olive.jpg",
-  "Huile Consul": "images/consul-huile-olive.jpg",
-  "Ouchar": "images/omaar-huile-tournesol.jpg",
-  "SilkGarden Liquide Vaisselle": "images/silkgarden-liquide-vaisselle.jpg",
-  "Achar Pickles": "images/achar-pickles.jpg",
-  "Pranutti Pâte à Tartiner": "images/pranutti-pate-tartiner.jpg",
-  "Flora Custard": "images/flora-custard.jpg",
-  "Luna Baked Beans": "images/luna-baked-beans.jpg",
-  "Can Fleurs Macédoine": "images/canfleurs-macedoine.jpg",
-  "Almomtaz Miel Pot": "images/almomtaz-miel-pot.jpg",
-  "Almomtaz Miel Flacon": "images/almomtaz-miel-flacon.jpg",
-  "Mayor Mayonnaise": "images/mayor-mayonnaise.jpg",
-  "Mayonnaise petit": "images/mayor-mayonnaise.jpg",
-  "Mayonnaise grand": "images/mayor-mayonnaise.jpg",
-  // Nouveaux produits v12
-  "NAN Optipro 2": "images/nan-optipro-2.jpg",
-  "Foster Clarks Mandarine": "images/foster-clarks-mandarine.jpg",
-  "Brover Olives Noires": "images/brover-olives-noires.jpg",
-  "Festiva Sirop": "images/festiva-sirop.jpg",
-  "Rodha White Oats": "images/rodha-white-oats.jpg",
-  "Colombo Grenadine": "images/colombo-grenadine.jpg",
-  "Sunquick Mandarine": "images/sunquick-mandarine.jpg",
-  // Nouvelles images v13 (batch 3)
-  "Curcuma": "images/pran-curcuma.jpg",
-  "Moutarde petit": "images/alwalid-moutarde.jpg",
-  "Moutarde grand": "images/alwalid-moutarde.jpg",
-  // Nouveaux produits v13
-  "Nescafé Classic": "images/nescafe-classic.jpg",
-  "Eau Minérale": "images/eau-minerale.jpg",
-  "Alwalid Sel": "images/alwalid-sel.jpg",
-  "Lejador Ananas": "images/lejador-ananas.jpg",
-  "Luna Green Peas": "images/luna-green-peas.jpg",
-  "Mila Pêches": "images/mila-peches.jpg",
-  "Alhamra Purée Tomates": "images/alhamra-puree-tomates.jpg",
-  "Luna Haricots Blancs": "images/luna-haricots-blancs.jpg",
-  "Luna Foul Medames": "images/luna-foul-medames.jpg",
-  "Florida Confiture": "images/florida-confiture.jpg",
-  // Images v14 (batch 4) - liées aux existants
-  "Nesquick Poudre": "images/nesquick-poudre.jpg",
-  // Nouveaux produits v14
-  "Oxi Gel Black": "images/oxi-gel-black.jpg",
-  "Eazy Liquid Detergent 1L": "images/eazy-detergent-1L.jpg",
-  "Eazy Liquid Detergent 2L": "images/eazy-detergent-2L.jpg",
-  "Hayaat Honey Shampoo": "images/hayaat-shampoo.jpg",
-  "Brix Lavande 5L": "images/brix-lavande-5L.jpg",
-  "Beauty Clinic All Purpose 5L": "images/beauty-clinic-5L.jpg",
-  "Jumbo Bouillon Poulet": "images/jumbo-bouillon.jpg",
-  "Dania Épices Zurbian": "images/dania-zurbian.jpg",
-  "Nile Curry Powder": "images/nile-curry.jpg",
-  "Emballage Épices": "images/jaihind-emballage.jpg",
-  "Colorant Alimentaire": "images/colorant-alimentaire.jpg",
-  "Filtres à Café N°4": "images/filtres-cafe.jpg",
-  "Alamir Charbon": "images/alamir-charbon.jpg",
-  "Couscous Moyen": "images/couscous-moyen.jpg",
-  "Foster Clark's Baking Powder": "images/foster-clarks-baking.jpg",
-  "Dyna Antibacterial Hand Wash": "images/dyna-handwash.jpg",
-  // Images v15 (batch 5) - liées à existants
-  "Javel": "images/power-javel.jpg",
-  "Fasclean petit": "images/fasclean-1L.jpg",
-  "Fasclean moyen": "images/fasclean-1L.jpg",
-  "Fasclean 5L": "images/fasclean-1L.jpg",
-  "Largo": "images/largo-bidon.jpg",
-  // Nouveaux produits v15
-  "Dettol Antiseptic": "images/dettol-antiseptic.jpg",
-  "Elegant Furniture Polish": "images/elegant-furniture.jpg",
-  "Gaari Shampoo": "images/gaari-shampoo.jpg",
-  "Garnier Ultra Doux": "images/garnier-ultra-doux.jpg",
-  "Crème à Récurer": "images/creme-recurer.jpg",
+  "Pâtes Coudes": "images/bahar-coudes-400g.jpeg",
+  "Macaroni Coudes": "images/hilwa-macaroni-400g.jpeg",
+  "Spaghetti": "images/bahar-spaghetti-500g.jpeg",
+  "Spaghetti Italien": "images/spaghetti-italien-500g.jpeg",
+  "Riz Basmati Premium": "images/sabri-basmati-5kg.jpeg",
+  "Riz Mazza Étuvé 1121": "images/vista-1121-mazza-etuve-5kg.jpeg",
+  "Basmati Heritage": "images/jb-heritage-basmati-5kg.jpeg",
+  "Mélange Épices Vrac (poudre brune)": "images/epice-vrac-brune-1kg.jpeg",
+  "Cumin Moulu Vrac": "images/cumin-moulu-vrac-1kg.jpeg",
+  "Gingembre Sec Entier": "images/gingembre-sec-entier-500g.jpeg",
+  "Gingembre Moulu": "images/gingembre-moulu-1kg.jpeg",
+  "Cannelle Moulue Vrac": "images/cannelle-moulue-500g.jpeg",
+  "Clous de Girofle": "images/clous-girofle-500g.jpeg",
+  "Maïs à Popcorn": "images/mais-popcorn-1kg.jpeg",
+  "Cacahuètes en Grains": "images/cacahuetes-grains-1kg.jpeg",
+  "Lentilles Corail": "images/lentilles-corail-1kg.jpeg",
+  "Café Vert en Grains": "images/cafe-vert-grains-500g.jpeg",
+  "Nescafé Classic": "images/nescafe-classic-200g.jpeg",
+  "Café Moulu Éthiopien": "images/abyssinia-cafe-moulu-500g.jpeg",
+  "Huile de Tournesol": "images/omaar-huile-tournesol-1l.jpeg",
+  "Huile Olive & Raffinée": "images/bertini-olive-1.5l.jpeg",
+  "Huile d'Olive Extra Vierge": "images/virginia-olive-extra-vierge-1l.jpeg",
+  "Huile d'Olive Pomace + Extra Vierge": "images/consul-olive-250ml.jpeg",
+  "Curcuma Moulu": "images/pran-curcuma-200g.jpeg",
+  "Haricots Blancs": "images/luna-haricots-blancs-400g.jpeg",
+  "Curry Moulu": "images/pran-curry-200g.jpeg",
+  "Épices Zurbian": "images/dania-zurbian-50g.jpeg",
+  "Épices Sanuna Poisson Adeni": "images/dania-sanuna-poisson-50g.jpeg",
+  "Épices Viande (Bahar Lahem)": "images/yaseen-meat-spices-50g.jpeg",
+  "Épices Kabsa": "images/dania-kabsa-50g.jpeg",
+  "Purée de Tomates": "images/alhamra-puree-tomates-400g.jpeg",
+  "Foul Medames (Fèves)": "images/luna-foul-medames-400g.jpeg",
+  "Ketchup Tomate": "images/nura-ketchup-340g.jpeg",
+  "Petits Pois": "images/luna-petits-pois-400g.jpeg",
+  "Macédoine de Légumes": "images/coin-fleuri-macedoine-400g.jpeg",
+  "Ananas en Tranches au Sirop": "images/legador-ananas-tranches-565g.jpeg",
+  "Confiture Fruits Mixtes Fraise": "images/florida-confiture-fraise-450g.jpeg",
+  "Miel Naturel": "images/almomtaz-miel-400g.jpeg",
+  "Moutarde de Dijon": "images/chatel-moutarde-dijon-370g.jpeg",
+  "Sel de Mer Iodé": "images/alwalid-sel-mer-700g.jpeg",
+  "Levure Chimique": "images/foster-clarks-levure-24x10g.jpeg",
+  "Blédilait Croissance 1-3 ans": "images/bledina-bledilait-croissance-400g.jpeg",
+  "Blédilait 2 (6-12 mois)": "images/bledina-bledilait-2-400g.jpeg",
+  "Lait en Poudre Full Cream": "images/nura-lait-poudre-2.5kg.jpeg",
+  "Lait NIDO 1+ (1-3 ans)": "images/nestle-nido-1plus-900g.jpeg",
+  "Lait Skimmed Instantané": "images/al-barakah-lait-2.5kg.jpeg",
+  "Lait Full Cream": "images/coast-lait-2.5kg.jpeg",
+  "Nesquik Cacao": "images/nestle-nesquik-cacao-500g.jpeg",
+  "Mouchoirs en Papier 600": "images/classic-mouchoirs-600.jpeg",
+  "Savon Liquide Mains Forest Rose": "images/dyna-hand-wash-rose-500ml.jpeg",
+  "Pack Savon Citron Multiusages": "images/dalan-savon-citron-pack.jpeg",
+  "Eau de Cologne Ice Cool": "images/ice-cool-cologne-250ml.jpeg",
+  "Savon Marseille Olive": "images/dalan-savon-olive-150g.jpeg",
+  "Antiseptique Désinfectant": "images/dettol-antiseptique-500ml.jpeg",
+  "Shampooing Avocat & Karité": "images/garnier-ultra-doux-avocat-400ml.jpeg",
+  "Shampooing Anti-Pellicules Aloe": "images/dalan-shampoo-aloe-450ml.jpeg",
+  "Savon de Marseille (carton)": "images/omaar-savon-marseille-carton.jpeg",
+  "Nettoyant WC Acide": "images/super-flash-wc-1l.jpeg",
+  "Crème à Récurer Citron": "images/leaderprice-creme-recurer-750ml.jpeg",
+  "Lessive Liquide Linges Noirs": "images/titiz-lessive-noir-1.5l.jpeg",
+  "Nettoyant WC Désinfectant": "images/brix-wc-750ml.jpeg",
+  "Lessive Liquide Lavande": "images/fasclean-lessive-lavande-1l.jpeg",
+  "Nettoyant Vitres Fleurs": "images/brix-vitres-750ml.jpeg",
+  "Poudre à Récurer 3in1 Citron": "images/fema-poudre-recurer-1kg.jpeg",
+  "Lessive Gel Linges Noirs": "images/oxi-gel-noir-900g.jpeg",
+  "Cire Meubles Polish": "images/elegant-7c-meubles-300ml.jpeg",
+  "Liquide Vaisselle Citron": "images/oxi-vaisselle-citron-750ml.jpeg",
+  "Pâte Vaisselle Citron": "images/al-wazir-pate-vaisselle-500g.jpeg",
+  "Riz Basmati Extreme + Butter Chicken": "images/falak-extreme-butter-chicken-5kg.jpeg",
+  "Riz Basmati 1121 Classic": "images/mahra-1121-classic-5kg.jpeg",
+  "Riz Basmati Tango": "images/jb-tango-5kg.jpeg",
+  "Riz Basmati Golden Sella 1121": "images/asad-gold-1121-5kg.jpeg",
+  "Riz Basmati Haute Qualité (jute)": "images/omaar-basmati-jute-5kg.jpeg",
+  "Riz Basmati Premium 1121": "images/ababa-basmati-1121-5kg.jpeg",
+  "Riz Basmati Sella + Chicken Tikka": "images/falak-sella-chicken-tikka-5kg.jpeg",
+  "Riz Basmati Extreme": "images/falak-extreme-1kg.jpeg",
+  "Céréales Nesquik": "images/nestle-nesquik-cereales-375g.jpeg",
+  "Flocons d'Avoine Quick Cooking": "images/rodha-avoine-500g.jpeg",
+  "Céréale Bébé Blé & Lait": "images/cerelac-ble-lait-400g.jpeg",
+  "Concentré Mandarine Vitamin C": "images/sunquick-mandarine-840ml.jpeg",
+  "Filtres à Café N°4 Non Blanchis": "images/leaderprice-filtres-cafe-100.jpeg",
+  "Sucre Blanc": "images/sucre-blanc-vrac-1kg.jpeg",
+  "Farine de Blé": "images/farine-ble-vrac-2kg.jpeg",
+  "Plateau d'Œufs": "images/oeufs-plateau-30.jpeg",
 };
 
 // Category fallback images
@@ -1259,12 +2618,12 @@ const catIcons = {
 
 
 const SHEET_PRODUCTS = [
-  {cat:"Riz",name:"Assad Premium",popular:true,icon:"🌾",prices:[{label:"Sac 5 Kg",qty:1,price:1500}]},
-  {cat:"Riz",name:"JB Basmati",popular:true,icon:"🌾",prices:[{label:"Sac 5 Kg",qty:1,price:1600}]},
+  {cat:"Riz",name:"Assad Premium",season:"ramadan",popular:true,icon:"🌾",prices:[{label:"Sac 5 Kg",qty:1,price:1500}]},
+  {cat:"Riz",name:"JB Basmati",season:"ramadan",popular:true,icon:"🌾",prices:[{label:"Sac 5 Kg",qty:1,price:1600}]},
   {cat:"Riz",name:"JB Bazar",icon:"🌾",prices:[{label:"Sac 5 Kg",qty:1,price:1500}]},
   {cat:"Riz",name:"Faiza",icon:"🌾",prices:[{label:"Sac 5 Kg",qty:1,price:1700}]},
   {cat:"Riz",name:"Falak",icon:"🌾",prices:[{label:"Sac 5 Kg",qty:1,price:1900}]},
-  {cat:"Riz",name:"Falak Premium",icon:"🌾",prices:[{label:"Sac 5 Kg",qty:1,price:2200}]},
+  {cat:"Riz",name:"Falak Premium",season:"ramadan",icon:"🌾",prices:[{label:"Sac 5 Kg",qty:1,price:2200}]},
   {cat:"Riz",name:"Falak Bazar",icon:"🌾",prices:[{label:"Sac 5 Kg",qty:1,price:1900}]},
   {cat:"Riz",name:"Jalal",icon:"🌾",prices:[{label:"Sac 5 Kg",qty:1,price:1500}]},
   {cat:"Riz",name:"Maya Basmati",icon:"🌾",prices:[{label:"Sac 5 Kg",qty:1,price:1700}]},
@@ -1272,8 +2631,8 @@ const SHEET_PRODUCTS = [
   {cat:"Riz",name:"Beleine",icon:"🌾",prices:[{label:"Sac 25 Kg",qty:1,price:2800}]},
   {cat:"Riz",name:"Beleine Bazar",icon:"🌾",prices:[{label:"Sac 25 Kg",qty:1,price:4700}]},
   {cat:"Riz",name:"Sunbul",icon:"🌾",prices:[{label:"Sac 22,5 Kg",qty:1,price:5500}]},
-  {cat:"Spaghetti",name:"Pasta Bahar",icon:"🍝",prices:[{label:"1/2 Carton",qty:1,price:1500}]},
-  {cat:"Spaghetti",name:"Pasta Al-Taj",popular:true,icon:"🍝",prices:[{label:"1/2 Carton",qty:1,price:1300}]},
+  {cat:"Spaghetti",name:"Pasta Bahar",season:"ramadan",icon:"🍝",prices:[{label:"1/2 Carton",qty:1,price:1500}]},
+  {cat:"Spaghetti",name:"Pasta Al-Taj",season:"ramadan",popular:true,icon:"🍝",prices:[{label:"1/2 Carton",qty:1,price:1300}]},
   {cat:"Spaghetti",name:"Pasta Hilwa",icon:"🍝",prices:[{label:"1/2 Carton",qty:1,price:1500}]},
   {cat:"Spaghetti",name:"Pasta Berri",icon:"🍝",prices:[{label:"1/2 Carton",qty:1,price:1450}]},
   {cat:"Spaghetti",name:"Pasta Primo",icon:"🍝",prices:[{label:"1/2 Carton",qty:1,price:1450}]},
@@ -1597,10 +2956,19 @@ function buildGrid(){
     const imgSrc = product.imgUrl || productImages[product.name] || catImages[product.cat] || '';
     const safeImgSrc = encodeURI(imgSrc).replace(/"/g,'%22');
     const badgeHtml = product.popular ? `<div class="card-badge">⭐ ${t('badge-popular')}</div>` : '';
+    const seasonLabels = {
+      'ramadan': {fr: '🌙 Ramadan', en: '🌙 Ramadan', ar: 'رمضان 🌙'},
+      'saison-chaude': {fr: '🔥 Saison', en: '🔥 Season', ar: 'الصيف 🔥'},
+      'rentree': {fr: '📚 Rentrée', en: '📚 School', ar: 'المدرسة 📚'},
+      'aid': {fr: '🎉 Aïd', en: '🎉 Eid', ar: 'العيد 🎉'}
+    };
+    const seasonRibbon = product.season && seasonLabels[product.season] 
+      ? `<div class="season-ribbon ${product.season}">${seasonLabels[product.season][currentLang] || seasonLabels[product.season].fr}</div>` 
+      : '';
     const imgHtml = imgSrc 
       ? `<div class="card-img-wrap">${badgeHtml}<img src="${safeImgSrc}" alt="${escapeHtml(product.name)}" loading="lazy" onerror="this.classList.add('hidden');this.parentNode.querySelector('.card-img-fallback').style.display='flex'"><div class="card-img-fallback" style="display:none;font-size:3.5rem;opacity:0.6;align-items:center;justify-content:center;width:100%;height:100%">${escapeHtml(product.icon)}</div></div>`
       : `<div class="card-img-wrap">${badgeHtml}<div class="card-img-fallback">${escapeHtml(product.icon)}</div></div>`;
-    card.innerHTML=`
+    card.innerHTML=`${seasonRibbon}
       ${imgHtml}
       <div class="card-header">
         <span class="card-cat">${escapeHtml(getCatLabel(product.cat))}</span>
